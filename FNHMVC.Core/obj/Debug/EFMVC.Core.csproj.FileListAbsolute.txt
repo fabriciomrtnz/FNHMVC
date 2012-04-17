@@ -1,0 +1,20 @@
+D:\projects\FNHMVC\FNHMVC.Core\bin\Debug\FNHMVC.Core.dll
+D:\projects\FNHMVC\FNHMVC.Core\bin\Debug\FNHMVC.Core.pdb
+D:\projects\FNHMVC\FNHMVC.Core\obj\Debug\ResolveAssemblyReference.cache
+D:\projects\FNHMVC\FNHMVC.Core\obj\Debug\FNHMVC.Core.dll
+D:\projects\FNHMVC\FNHMVC.Core\obj\Debug\FNHMVC.Core.pdb
+C:\Users\shiju\Desktop\FNHMVC\FNHMVC\FNHMVC.Core\bin\Debug\FNHMVC.Core.dll
+C:\Users\shiju\Desktop\FNHMVC\FNHMVC\FNHMVC.Core\bin\Debug\FNHMVC.Core.pdb
+C:\Users\shiju\Desktop\FNHMVC\FNHMVC\FNHMVC.Core\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\shiju\Desktop\FNHMVC\FNHMVC\FNHMVC.Core\obj\Debug\FNHMVC.Core.dll
+C:\Users\shiju\Desktop\FNHMVC\FNHMVC\FNHMVC.Core\obj\Debug\FNHMVC.Core.pdb
+C:\FNHMVC (1)\FNHMVC\FNHMVC.Core\bin\Debug\FNHMVC.Core.dll
+C:\FNHMVC (1)\FNHMVC\FNHMVC.Core\bin\Debug\FNHMVC.Core.pdb
+C:\FNHMVC (1)\FNHMVC\FNHMVC.Core\obj\Debug\ResolveAssemblyReference.cache
+C:\FNHMVC (1)\FNHMVC\FNHMVC.Core\obj\Debug\FNHMVC.Core.dll
+C:\FNHMVC (1)\FNHMVC\FNHMVC.Core\obj\Debug\FNHMVC.Core.pdb
+C:\FNHMVC (1)\FNHMVC_V1.Beta\FNHMVC.Core\bin\Debug\FNHMVC.Core.dll
+C:\FNHMVC (1)\FNHMVC_V1.Beta\FNHMVC.Core\bin\Debug\FNHMVC.Core.pdb
+C:\FNHMVC (1)\FNHMVC_V1.Beta\FNHMVC.Core\obj\Debug\ResolveAssemblyReference.cache
+C:\FNHMVC (1)\FNHMVC_V1.Beta\FNHMVC.Core\obj\Debug\FNHMVC.Core.dll
+C:\FNHMVC (1)\FNHMVC_V1.Beta\FNHMVC.Core\obj\Debug\FNHMVC.Core.pdb

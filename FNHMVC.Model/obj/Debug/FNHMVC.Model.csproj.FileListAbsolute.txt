@@ -1,0 +1,14 @@
+D:\Projects\FNHMVC\FNHMVC.Model\bin\Debug\FNHMVC.Model.dll
+D:\Projects\FNHMVC\FNHMVC.Model\bin\Debug\FNHMVC.Model.pdb
+D:\Projects\FNHMVC\FNHMVC.Model\bin\Debug\FNHMVC.Core.dll
+D:\Projects\FNHMVC\FNHMVC.Model\bin\Debug\FNHMVC.Core.pdb
+D:\Projects\FNHMVC\FNHMVC.Model\obj\Debug\ResolveAssemblyReference.cache
+D:\Projects\FNHMVC\FNHMVC.Model\obj\Debug\FNHMVC.Model.dll
+D:\Projects\FNHMVC\FNHMVC.Model\obj\Debug\FNHMVC.Model.pdb
+C:\Projects\FNHMVC\FNHMVC.Model\bin\Debug\FNHMVC.Model.dll
+C:\Projects\FNHMVC\FNHMVC.Model\bin\Debug\FNHMVC.Model.pdb
+C:\Projects\FNHMVC\FNHMVC.Model\bin\Debug\FNHMVC.Core.dll
+C:\Projects\FNHMVC\FNHMVC.Model\bin\Debug\FNHMVC.Core.pdb
+C:\Projects\FNHMVC\FNHMVC.Model\obj\Debug\FNHMVC.Model.csprojResolveAssemblyReference.cache
+C:\Projects\FNHMVC\FNHMVC.Model\obj\Debug\FNHMVC.Model.dll
+C:\Projects\FNHMVC\FNHMVC.Model\obj\Debug\FNHMVC.Model.pdb

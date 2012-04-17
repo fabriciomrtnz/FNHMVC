@@ -1,0 +1,1079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FNHMVC.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="FNHMVCStoreContainer">
+    <EntitySet Name="PresupuestoSet" EntityType="FNHMVC.Store.PresupuestoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DatoRiesgoBaseSet" EntityType="FNHMVC.Store.DatoRiesgoBaseSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DatoTarifaSet" EntityType="FNHMVC.Store.DatoTarifaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaisSet" EntityType="FNHMVC.Store.PaisSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProvinciaSet" EntityType="FNHMVC.Store.ProvinciaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LocalidadSet" EntityType="FNHMVC.Store.LocalidadSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CodigoPostalSet" EntityType="FNHMVC.Store.CodigoPostalSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmpresaSet" EntityType="FNHMVC.Store.EmpresaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductoSet" EntityType="FNHMVC.Store.ProductoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="NoticiaSet" EntityType="FNHMVC.Store.NoticiaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ComentarioSet" EntityType="FNHMVC.Store.ComentarioSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MensajeSet" EntityType="FNHMVC.Store.MensajeSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoViaSet" EntityType="FNHMVC.Store.TipoViaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PersonaSet" EntityType="FNHMVC.Store.PersonaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MarcaSet" EntityType="FNHMVC.Store.MarcaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ModeloSet" EntityType="FNHMVC.Store.ModeloSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VersionSet" EntityType="FNHMVC.Store.VersionSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CodigoPostalLocalidadSet" EntityType="FNHMVC.Store.CodigoPostalLocalidadSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PersonaSet_Usuario" EntityType="FNHMVC.Store.PersonaSet_Usuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DatoRiesgoBaseSet_DatoRiesgoAuto" EntityType="FNHMVC.Store.DatoRiesgoBaseSet_DatoRiesgoAuto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MarcaSet_AutoMarca" EntityType="FNHMVC.Store.MarcaSet_AutoMarca" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ModeloSet_AutoModelo" EntityType="FNHMVC.Store.ModeloSet_AutoModelo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VersionSet_AutoVersion" EntityType="FNHMVC.Store.VersionSet_AutoVersion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DatoRiesgoBaseSet_DatoRiesgoMoto" EntityType="FNHMVC.Store.DatoRiesgoBaseSet_DatoRiesgoMoto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MarcaSet_MotoMarca" EntityType="FNHMVC.Store.MarcaSet_MotoMarca" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ModeloSet_MotoModelo" EntityType="FNHMVC.Store.ModeloSet_MotoModelo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VersionSet_MotoVersion" EntityType="FNHMVC.Store.VersionSet_MotoVersion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DatoRiesgoBaseSet_DatoRiesgoSalud" EntityType="FNHMVC.Store.DatoRiesgoBaseSet_DatoRiesgoSalud" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DatoRiesgoBaseSet_DatoRiesgoHogar" EntityType="FNHMVC.Store.DatoRiesgoBaseSet_DatoRiesgoHogar" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UsuarioPresupuesto" Association="FNHMVC.Store.UsuarioPresupuesto">
+      <End Role="Usuario" EntitySet="PersonaSet_Usuario" />
+      <End Role="Presupuesto" EntitySet="PresupuestoSet" />
+    </AssociationSet>
+    <AssociationSet Name="PresupuestoDatoTarifa" Association="FNHMVC.Store.PresupuestoDatoTarifa">
+      <End Role="Presupuesto" EntitySet="PresupuestoSet" />
+      <End Role="DatoTarifa" EntitySet="DatoTarifaSet" />
+    </AssociationSet>
+    <AssociationSet Name="ProvinciaLocalidad" Association="FNHMVC.Store.ProvinciaLocalidad">
+      <End Role="Provincia" EntitySet="ProvinciaSet" />
+      <End Role="Localidad" EntitySet="LocalidadSet" />
+    </AssociationSet>
+    <AssociationSet Name="PaisProvincia" Association="FNHMVC.Store.PaisProvincia">
+      <End Role="Pais" EntitySet="PaisSet" />
+      <End Role="Provincia" EntitySet="ProvinciaSet" />
+    </AssociationSet>
+    <AssociationSet Name="EmpresaNoticia" Association="FNHMVC.Store.EmpresaNoticia">
+      <End Role="Empresa" EntitySet="EmpresaSet" />
+      <End Role="Noticia" EntitySet="NoticiaSet" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioComentario" Association="FNHMVC.Store.UsuarioComentario">
+      <End Role="Usuario" EntitySet="PersonaSet_Usuario" />
+      <End Role="Comentario" EntitySet="ComentarioSet" />
+    </AssociationSet>
+    <AssociationSet Name="EmpresaProducto" Association="FNHMVC.Store.EmpresaProducto">
+      <End Role="Empresa" EntitySet="EmpresaSet" />
+      <End Role="Producto" EntitySet="ProductoSet" />
+    </AssociationSet>
+    <AssociationSet Name="PresupuestoDatoRiesgoBase" Association="FNHMVC.Store.PresupuestoDatoRiesgoBase">
+      <End Role="Presupuesto" EntitySet="PresupuestoSet" />
+      <End Role="DatoRiesgoBase" EntitySet="DatoRiesgoBaseSet" />
+    </AssociationSet>
+    <AssociationSet Name="EmpresaUsuario" Association="FNHMVC.Store.EmpresaUsuario">
+      <End Role="Empresa" EntitySet="EmpresaSet" />
+      <End Role="Usuario" EntitySet="PersonaSet_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="MensajeUsuarioFrom" Association="FNHMVC.Store.MensajeUsuarioFrom">
+      <End Role="Mensaje" EntitySet="MensajeSet" />
+      <End Role="Usuario" EntitySet="PersonaSet_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="PaisPersonaNacionalidad" Association="FNHMVC.Store.PaisPersonaNacionalidad">
+      <End Role="Pais" EntitySet="PaisSet" />
+      <End Role="Persona" EntitySet="PersonaSet" />
+    </AssociationSet>
+    <AssociationSet Name="PaisPersonaCarnet" Association="FNHMVC.Store.PaisPersonaCarnet">
+      <End Role="Pais" EntitySet="PaisSet" />
+      <End Role="Persona" EntitySet="PersonaSet" />
+    </AssociationSet>
+    <AssociationSet Name="PaisPersonaDireccion" Association="FNHMVC.Store.PaisPersonaDireccion">
+      <End Role="Pais" EntitySet="PaisSet" />
+      <End Role="Persona" EntitySet="PersonaSet" />
+    </AssociationSet>
+    <AssociationSet Name="CodigoPostalPersona" Association="FNHMVC.Store.CodigoPostalPersona">
+      <End Role="CodigoPostal" EntitySet="CodigoPostalSet" />
+      <End Role="Persona" EntitySet="PersonaSet" />
+    </AssociationSet>
+    <AssociationSet Name="PersonaPresupuestoTomador" Association="FNHMVC.Store.PersonaPresupuestoTomador">
+      <End Role="Persona" EntitySet="PersonaSet" />
+      <End Role="Presupuesto" EntitySet="PresupuestoSet" />
+    </AssociationSet>
+    <AssociationSet Name="PersonaPresupuestoAsegurado" Association="FNHMVC.Store.PersonaPresupuestoAsegurado">
+      <End Role="Persona" EntitySet="PersonaSet" />
+      <End Role="Presupuesto" EntitySet="PresupuestoSet" />
+    </AssociationSet>
+    <AssociationSet Name="CodigoPostalEmpresa" Association="FNHMVC.Store.CodigoPostalEmpresa">
+      <End Role="CodigoPostal" EntitySet="CodigoPostalSet" />
+      <End Role="Empresa" EntitySet="EmpresaSet" />
+    </AssociationSet>
+    <AssociationSet Name="TipoViaEmpresa" Association="FNHMVC.Store.TipoViaEmpresa">
+      <End Role="TipoVia" EntitySet="TipoViaSet" />
+      <End Role="Empresa" EntitySet="EmpresaSet" />
+    </AssociationSet>
+    <AssociationSet Name="LocalidadEmpresa" Association="FNHMVC.Store.LocalidadEmpresa">
+      <End Role="Localidad" EntitySet="LocalidadSet" />
+      <End Role="Empresa" EntitySet="EmpresaSet" />
+    </AssociationSet>
+    <AssociationSet Name="TipoViaPersona" Association="FNHMVC.Store.TipoViaPersona">
+      <End Role="TipoVia" EntitySet="TipoViaSet" />
+      <End Role="Persona" EntitySet="PersonaSet" />
+    </AssociationSet>
+    <AssociationSet Name="LocalidadPersona" Association="FNHMVC.Store.LocalidadPersona">
+      <End Role="Localidad" EntitySet="LocalidadSet" />
+      <End Role="Persona" EntitySet="PersonaSet" />
+    </AssociationSet>
+    <AssociationSet Name="VersionModelo" Association="FNHMVC.Store.VersionModelo">
+      <End Role="Version" EntitySet="VersionSet" />
+      <End Role="Modelo" EntitySet="ModeloSet" />
+    </AssociationSet>
+    <AssociationSet Name="ModeloMarca" Association="FNHMVC.Store.ModeloMarca">
+      <End Role="Modelo" EntitySet="ModeloSet" />
+      <End Role="Marca" EntitySet="MarcaSet" />
+    </AssociationSet>
+    <AssociationSet Name="DatoRiesgoAutoAutoMarca" Association="FNHMVC.Store.DatoRiesgoAutoAutoMarca">
+      <End Role="DatoRiesgoAuto" EntitySet="DatoRiesgoBaseSet_DatoRiesgoAuto" />
+      <End Role="AutoMarca" EntitySet="MarcaSet_AutoMarca" />
+    </AssociationSet>
+    <AssociationSet Name="DatoRiesgoAutoAutoModelo" Association="FNHMVC.Store.DatoRiesgoAutoAutoModelo">
+      <End Role="DatoRiesgoAuto" EntitySet="DatoRiesgoBaseSet_DatoRiesgoAuto" />
+      <End Role="AutoModelo" EntitySet="ModeloSet_AutoModelo" />
+    </AssociationSet>
+    <AssociationSet Name="DatoRiesgoAutoAutoVersion" Association="FNHMVC.Store.DatoRiesgoAutoAutoVersion">
+      <End Role="DatoRiesgoAuto" EntitySet="DatoRiesgoBaseSet_DatoRiesgoAuto" />
+      <End Role="AutoVersion" EntitySet="VersionSet_AutoVersion" />
+    </AssociationSet>
+    <AssociationSet Name="DatoRiesgoMotoMotoMarca" Association="FNHMVC.Store.DatoRiesgoMotoMotoMarca">
+      <End Role="DatoRiesgoMoto" EntitySet="DatoRiesgoBaseSet_DatoRiesgoMoto" />
+      <End Role="MotoMarca" EntitySet="MarcaSet_MotoMarca" />
+    </AssociationSet>
+    <AssociationSet Name="DatoRiesgoMotoMotoModelo" Association="FNHMVC.Store.DatoRiesgoMotoMotoModelo">
+      <End Role="DatoRiesgoMoto" EntitySet="DatoRiesgoBaseSet_DatoRiesgoMoto" />
+      <End Role="MotoModelo" EntitySet="ModeloSet_MotoModelo" />
+    </AssociationSet>
+    <AssociationSet Name="DatoRiesgoMotoMotoVersion" Association="FNHMVC.Store.DatoRiesgoMotoMotoVersion">
+      <End Role="DatoRiesgoMoto" EntitySet="DatoRiesgoBaseSet_DatoRiesgoMoto" />
+      <End Role="MotoVersion" EntitySet="VersionSet_MotoVersion" />
+    </AssociationSet>
+    <AssociationSet Name="ComentarioEmpresa" Association="FNHMVC.Store.ComentarioEmpresa">
+      <End Role="Comentario" EntitySet="ComentarioSet" />
+      <End Role="Empresa" EntitySet="EmpresaSet" />
+    </AssociationSet>
+    <AssociationSet Name="ComentarioNoticia" Association="FNHMVC.Store.ComentarioNoticia">
+      <End Role="Comentario" EntitySet="ComentarioSet" />
+      <End Role="Noticia" EntitySet="NoticiaSet" />
+    </AssociationSet>
+    <AssociationSet Name="ComentarioProducto" Association="FNHMVC.Store.ComentarioProducto">
+      <End Role="Comentario" EntitySet="ComentarioSet" />
+      <End Role="Producto" EntitySet="ProductoSet" />
+    </AssociationSet>
+    <AssociationSet Name="CodigoPostalLocalidadCodigoPostal" Association="FNHMVC.Store.CodigoPostalLocalidadCodigoPostal">
+      <End Role="CodigoPostalLocalidad" EntitySet="CodigoPostalLocalidadSet" />
+      <End Role="CodigoPostal" EntitySet="CodigoPostalSet" />
+    </AssociationSet>
+    <AssociationSet Name="CodigoPostalLocalidadLocalidad" Association="FNHMVC.Store.CodigoPostalLocalidadLocalidad">
+      <End Role="CodigoPostalLocalidad" EntitySet="CodigoPostalLocalidadSet" />
+      <End Role="Localidad" EntitySet="LocalidadSet" />
+    </AssociationSet>
+    <AssociationSet Name="MensajeUsuario" Association="FNHMVC.Store.MensajeUsuario">
+      <End Role="Mensaje" EntitySet="MensajeSet" />
+      <End Role="Usuario" EntitySet="PersonaSet_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_inherits_Persona" Association="FNHMVC.Store.FK_Usuario_inherits_Persona">
+      <End Role="Persona" EntitySet="PersonaSet" />
+      <End Role="Usuario" EntitySet="PersonaSet_Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DatoRiesgoAuto_inherits_DatoRiesgoBase" Association="FNHMVC.Store.FK_DatoRiesgoAuto_inherits_DatoRiesgoBase">
+      <End Role="DatoRiesgoBase" EntitySet="DatoRiesgoBaseSet" />
+      <End Role="DatoRiesgoAuto" EntitySet="DatoRiesgoBaseSet_DatoRiesgoAuto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoMarca_inherits_Marca" Association="FNHMVC.Store.FK_AutoMarca_inherits_Marca">
+      <End Role="Marca" EntitySet="MarcaSet" />
+      <End Role="AutoMarca" EntitySet="MarcaSet_AutoMarca" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoModelo_inherits_Modelo" Association="FNHMVC.Store.FK_AutoModelo_inherits_Modelo">
+      <End Role="Modelo" EntitySet="ModeloSet" />
+      <End Role="AutoModelo" EntitySet="ModeloSet_AutoModelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoVersion_inherits_Version" Association="FNHMVC.Store.FK_AutoVersion_inherits_Version">
+      <End Role="Version" EntitySet="VersionSet" />
+      <End Role="AutoVersion" EntitySet="VersionSet_AutoVersion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DatoRiesgoMoto_inherits_DatoRiesgoBase" Association="FNHMVC.Store.FK_DatoRiesgoMoto_inherits_DatoRiesgoBase">
+      <End Role="DatoRiesgoBase" EntitySet="DatoRiesgoBaseSet" />
+      <End Role="DatoRiesgoMoto" EntitySet="DatoRiesgoBaseSet_DatoRiesgoMoto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MotoMarca_inherits_Marca" Association="FNHMVC.Store.FK_MotoMarca_inherits_Marca">
+      <End Role="Marca" EntitySet="MarcaSet" />
+      <End Role="MotoMarca" EntitySet="MarcaSet_MotoMarca" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MotoModelo_inherits_Modelo" Association="FNHMVC.Store.FK_MotoModelo_inherits_Modelo">
+      <End Role="Modelo" EntitySet="ModeloSet" />
+      <End Role="MotoModelo" EntitySet="ModeloSet_MotoModelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MotoVersion_inherits_Version" Association="FNHMVC.Store.FK_MotoVersion_inherits_Version">
+      <End Role="Version" EntitySet="VersionSet" />
+      <End Role="MotoVersion" EntitySet="VersionSet_MotoVersion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DatoRiesgoSalud_inherits_DatoRiesgoBase" Association="FNHMVC.Store.FK_DatoRiesgoSalud_inherits_DatoRiesgoBase">
+      <End Role="DatoRiesgoBase" EntitySet="DatoRiesgoBaseSet" />
+      <End Role="DatoRiesgoSalud" EntitySet="DatoRiesgoBaseSet_DatoRiesgoSalud" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DatoRiesgoHogar_inherits_DatoRiesgoBase" Association="FNHMVC.Store.FK_DatoRiesgoHogar_inherits_DatoRiesgoBase">
+      <End Role="DatoRiesgoBase" EntitySet="DatoRiesgoBaseSet" />
+      <End Role="DatoRiesgoHogar" EntitySet="DatoRiesgoBaseSet_DatoRiesgoHogar" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PresupuestoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsuarioId" Type="bigint" Nullable="true" />
+    <Property Name="GUID" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaAlta" Type="datetime" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaEfecto" Type="datetime" Nullable="true" />
+    <Property Name="PersonaIdTomador" Type="bigint" Nullable="true" />
+    <Property Name="Usuario_Id" Type="bigint" Nullable="true" />
+  </EntityType>
+  <EntityType Name="DatoRiesgoBaseSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Presupuesto_Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DatoTarifaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PresupuestoId" Type="bigint" Nullable="false" />
+    <Property Name="FraccionamientoValor" Type="smallint" Nullable="true" />
+    <Property Name="Seleccionada" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Modalidad" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Importe" Type="decimal" Nullable="false" />
+    <Property Name="FechaAlta" Type="datetime" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaisSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ProvinciaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaisId" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="LocalidadSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProvinciaId" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="CodigoPostalSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar" Nullable="false" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="EmpresaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="CIF" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="Direccion" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="Telefono" Type="nvarchar" Nullable="true" MaxLength="15" />
+    <Property Name="Fax" Type="nvarchar" Nullable="true" MaxLength="15" />
+    <Property Name="CodigoPostalId" Type="int" Nullable="true" />
+    <Property Name="TipoViaId" Type="int" Nullable="true" />
+    <Property Name="LocalidadId" Type="int" Nullable="true" />
+    <Property Name="Publicar" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Descripcion" Type="nvarchar" Nullable="true" MaxLength="512" />
+    <Property Name="EmpresaId" Type="bigint" Nullable="false" />
+    <Property Name="Publicar" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NoticiaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Texto" Type="nvarchar" Nullable="false" MaxLength="1024" />
+    <Property Name="EmpresaId" Type="bigint" Nullable="false" />
+    <Property Name="Publicar" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ComentarioSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Texto" Type="nvarchar" Nullable="false" MaxLength="512" />
+    <Property Name="Asunto" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="UsuarioId" Type="bigint" Nullable="false" />
+    <Property Name="Publicar" Type="bit" Nullable="false" />
+    <Property Name="EmpresaId" Type="bigint" Nullable="true" />
+    <Property Name="NoticiaId" Type="bigint" Nullable="true" />
+    <Property Name="ProductoId" Type="bigint" Nullable="true" />
+    <Property Name="Usuario_Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MensajeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Asunto" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Texto" Type="nvarchar" Nullable="false" MaxLength="512" />
+    <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+    <Property Name="Estado" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FechaLeido" Type="datetime" Nullable="true" />
+    <Property Name="UsuarioFromId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioToId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoViaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PersonaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="true" MaxLength="25" />
+    <Property Name="Apellido1" Type="nvarchar" Nullable="true" MaxLength="25" />
+    <Property Name="Apellido2" Type="nvarchar" Nullable="true" MaxLength="25" />
+    <Property Name="SexoValor" Type="smallint" Nullable="true" />
+    <Property Name="Parentesco" Type="nvarchar" Nullable="true" MaxLength="25" />
+    <Property Name="FechaNacimiento" Type="datetime" Nullable="true" />
+    <Property Name="NIF" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="Direccion" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Telefono" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="Movil" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="Fax" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="256" />
+    <Property Name="TipoDocValor" Type="smallint" Nullable="false" />
+    <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+    <Property Name="CarnetValor" Type="smallint" Nullable="true" />
+    <Property Name="EstadoCivil" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Profesion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="PaisIdNacionalidad" Type="int" Nullable="true" />
+    <Property Name="PaisIdCarnet" Type="int" Nullable="true" />
+    <Property Name="PaisIdDireccion" Type="int" Nullable="true" />
+    <Property Name="CodigoPostalId" Type="int" Nullable="true" />
+    <Property Name="PresupuestoIdAsegurado" Type="bigint" Nullable="true" />
+    <Property Name="TipoViaId" Type="int" Nullable="true" />
+    <Property Name="LocalidadId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MarcaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+    <Property Name="FechaBaja" Type="datetime" Nullable="true" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModeloSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+    <Property Name="FechaBaja" Type="datetime" Nullable="true" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="MarcaId" Type="bigint" Nullable="true" />
+  </EntityType>
+  <EntityType Name="VersionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+    <Property Name="FechaBaja" Type="datetime" Nullable="true" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="ModeloId" Type="bigint" Nullable="true" />
+  </EntityType>
+  <EntityType Name="CodigoPostalLocalidadSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoPostalId" Type="int" Nullable="false" />
+    <Property Name="LocalidadId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonaSet_Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="PasswordHash" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="FechaUltimoLogin" Type="datetime" StoreGeneratedPattern="Computed" Nullable="true" />
+    <Property Name="Activo" Type="bit" Nullable="false" DefaultValue="true" />
+    <Property Name="RoleId" Type="smallint" Nullable="true" />
+    <Property Name="EmpresaId" Type="bigint" Nullable="true" />
+    <Property Name="Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DatoRiesgoBaseSet_DatoRiesgoAuto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Matricula" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="NumBastidor" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Combustible" Type="nvarchar" Nullable="true" MaxLength="25" />
+    <Property Name="Puertas" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Potencia" Type="smallint" Nullable="true" />
+    <Property Name="Cilindrada" Type="smallint" Nullable="true" />
+    <Property Name="LugarEstacionamiento" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Uso" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="KM" Type="int" Nullable="true" />
+    <Property Name="FechaMatriculacion" Type="datetime" Nullable="true" />
+    <Property Name="FechaCompra" Type="datetime" Nullable="true" />
+    <Property Name="KMsAnual" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="CochesUnidadFamiliar" Type="smallint" Nullable="true" />
+    <Property Name="HijosMenores16" Type="smallint" Nullable="true" />
+    <Property Name="CPEstacionamiento" Type="nvarchar" Nullable="true" MaxLength="10" />
+    <Property Name="AnyosViviendoResidencia" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="AseguradoraActual" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="AnyoAseguoradora" Type="smallint" Nullable="true" />
+    <Property Name="AnyosTitularSeguro" Type="smallint" Nullable="true" />
+    <Property Name="AnyosSinDarPartes" Type="smallint" Nullable="true" />
+    <Property Name="MultasUltimos4Anyos" Type="smallint" Nullable="true" />
+    <Property Name="Modalidad" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="AutoMarcaId" Type="bigint" Nullable="true" />
+    <Property Name="AutoModeloId" Type="bigint" Nullable="true" />
+    <Property Name="AutoVersionId" Type="bigint" Nullable="true" />
+    <Property Name="Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MarcaSet_AutoMarca">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModeloSet_AutoModelo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VersionSet_AutoVersion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DatoRiesgoBaseSet_DatoRiesgoMoto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Cilindrada" Type="smallint" Nullable="true" />
+    <Property Name="Potencia" Type="smallint" Nullable="true" />
+    <Property Name="LugarEstacionamiento" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CPEstacionamiento" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="AseguradoraActual" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="AnyoAsegurado" Type="smallint" Nullable="true" />
+    <Property Name="SiniestrosCulpabilidadAnyos" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="KMsAnual" Type="int" Nullable="true" />
+    <Property Name="Uso" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FechaCompra" Type="datetime" Nullable="true" />
+    <Property Name="FechaMatriculacion" Type="datetime" Nullable="true" />
+    <Property Name="MotoMarcaId" Type="bigint" Nullable="true" />
+    <Property Name="MotoModeloId" Type="bigint" Nullable="true" />
+    <Property Name="MotoVersionId" Type="bigint" Nullable="true" />
+    <Property Name="Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MarcaSet_MotoMarca">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModeloSet_MotoModelo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VersionSet_MotoVersion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DatoRiesgoBaseSet_DatoRiesgoSalud">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DatoRiesgoBaseSet_DatoRiesgoHogar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <Association Name="UsuarioPresupuesto">
+    <End Role="Usuario" Type="FNHMVC.Store.PersonaSet_Usuario" Multiplicity="0..1" />
+    <End Role="Presupuesto" Type="FNHMVC.Store.PresupuestoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Presupuesto">
+        <PropertyRef Name="Usuario_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PresupuestoDatoTarifa">
+    <End Role="Presupuesto" Type="FNHMVC.Store.PresupuestoSet" Multiplicity="1" />
+    <End Role="DatoTarifa" Type="FNHMVC.Store.DatoTarifaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Presupuesto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DatoTarifa">
+        <PropertyRef Name="PresupuestoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProvinciaLocalidad">
+    <End Role="Provincia" Type="FNHMVC.Store.ProvinciaSet" Multiplicity="1" />
+    <End Role="Localidad" Type="FNHMVC.Store.LocalidadSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provincia">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Localidad">
+        <PropertyRef Name="ProvinciaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PaisProvincia">
+    <End Role="Pais" Type="FNHMVC.Store.PaisSet" Multiplicity="1" />
+    <End Role="Provincia" Type="FNHMVC.Store.ProvinciaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pais">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Provincia">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmpresaNoticia">
+    <End Role="Empresa" Type="FNHMVC.Store.EmpresaSet" Multiplicity="1" />
+    <End Role="Noticia" Type="FNHMVC.Store.NoticiaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Noticia">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsuarioComentario">
+    <End Role="Usuario" Type="FNHMVC.Store.PersonaSet_Usuario" Multiplicity="1" />
+    <End Role="Comentario" Type="FNHMVC.Store.ComentarioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="Usuario_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmpresaProducto">
+    <End Role="Empresa" Type="FNHMVC.Store.EmpresaSet" Multiplicity="1" />
+    <End Role="Producto" Type="FNHMVC.Store.ProductoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PresupuestoDatoRiesgoBase">
+    <End Role="Presupuesto" Type="FNHMVC.Store.PresupuestoSet" Multiplicity="1" />
+    <End Role="DatoRiesgoBase" Type="FNHMVC.Store.DatoRiesgoBaseSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Presupuesto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DatoRiesgoBase">
+        <PropertyRef Name="Presupuesto_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmpresaUsuario">
+    <End Role="Empresa" Type="FNHMVC.Store.EmpresaSet" Multiplicity="0..1" />
+    <End Role="Usuario" Type="FNHMVC.Store.PersonaSet_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MensajeUsuarioFrom">
+    <End Role="Mensaje" Type="FNHMVC.Store.MensajeSet" Multiplicity="*" />
+    <End Role="Usuario" Type="FNHMVC.Store.PersonaSet_Usuario" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Mensaje">
+        <PropertyRef Name="UsuarioFromId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PaisPersonaNacionalidad">
+    <End Role="Pais" Type="FNHMVC.Store.PaisSet" Multiplicity="0..1" />
+    <End Role="Persona" Type="FNHMVC.Store.PersonaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pais">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="PaisIdNacionalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PaisPersonaCarnet">
+    <End Role="Pais" Type="FNHMVC.Store.PaisSet" Multiplicity="0..1" />
+    <End Role="Persona" Type="FNHMVC.Store.PersonaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pais">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="PaisIdCarnet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PaisPersonaDireccion">
+    <End Role="Pais" Type="FNHMVC.Store.PaisSet" Multiplicity="0..1" />
+    <End Role="Persona" Type="FNHMVC.Store.PersonaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pais">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="PaisIdDireccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CodigoPostalPersona">
+    <End Role="CodigoPostal" Type="FNHMVC.Store.CodigoPostalSet" Multiplicity="0..1" />
+    <End Role="Persona" Type="FNHMVC.Store.PersonaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoPostal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="CodigoPostalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonaPresupuestoTomador">
+    <End Role="Persona" Type="FNHMVC.Store.PersonaSet" Multiplicity="0..1" />
+    <End Role="Presupuesto" Type="FNHMVC.Store.PresupuestoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Presupuesto">
+        <PropertyRef Name="PersonaIdTomador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonaPresupuestoAsegurado">
+    <End Role="Persona" Type="FNHMVC.Store.PersonaSet" Multiplicity="*" />
+    <End Role="Presupuesto" Type="FNHMVC.Store.PresupuestoSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Presupuesto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="PresupuestoIdAsegurado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CodigoPostalEmpresa">
+    <End Role="CodigoPostal" Type="FNHMVC.Store.CodigoPostalSet" Multiplicity="0..1" />
+    <End Role="Empresa" Type="FNHMVC.Store.EmpresaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoPostal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empresa">
+        <PropertyRef Name="CodigoPostalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoViaEmpresa">
+    <End Role="TipoVia" Type="FNHMVC.Store.TipoViaSet" Multiplicity="0..1" />
+    <End Role="Empresa" Type="FNHMVC.Store.EmpresaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoVia">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empresa">
+        <PropertyRef Name="TipoViaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LocalidadEmpresa">
+    <End Role="Localidad" Type="FNHMVC.Store.LocalidadSet" Multiplicity="0..1" />
+    <End Role="Empresa" Type="FNHMVC.Store.EmpresaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Localidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Empresa">
+        <PropertyRef Name="LocalidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoViaPersona">
+    <End Role="TipoVia" Type="FNHMVC.Store.TipoViaSet" Multiplicity="0..1" />
+    <End Role="Persona" Type="FNHMVC.Store.PersonaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoVia">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="TipoViaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LocalidadPersona">
+    <End Role="Localidad" Type="FNHMVC.Store.LocalidadSet" Multiplicity="1" />
+    <End Role="Persona" Type="FNHMVC.Store.PersonaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Localidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="LocalidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VersionModelo">
+    <End Role="Version" Type="FNHMVC.Store.VersionSet" Multiplicity="*" />
+    <End Role="Modelo" Type="FNHMVC.Store.ModeloSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Version">
+        <PropertyRef Name="ModeloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ModeloMarca">
+    <End Role="Modelo" Type="FNHMVC.Store.ModeloSet" Multiplicity="*" />
+    <End Role="Marca" Type="FNHMVC.Store.MarcaSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Modelo">
+        <PropertyRef Name="MarcaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DatoRiesgoAutoAutoMarca">
+    <End Role="DatoRiesgoAuto" Type="FNHMVC.Store.DatoRiesgoBaseSet_DatoRiesgoAuto" Multiplicity="*" />
+    <End Role="AutoMarca" Type="FNHMVC.Store.MarcaSet_AutoMarca" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AutoMarca">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DatoRiesgoAuto">
+        <PropertyRef Name="AutoMarcaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DatoRiesgoAutoAutoModelo">
+    <End Role="DatoRiesgoAuto" Type="FNHMVC.Store.DatoRiesgoBaseSet_DatoRiesgoAuto" Multiplicity="*" />
+    <End Role="AutoModelo" Type="FNHMVC.Store.ModeloSet_AutoModelo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AutoModelo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DatoRiesgoAuto">
+        <PropertyRef Name="AutoModeloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DatoRiesgoAutoAutoVersion">
+    <End Role="DatoRiesgoAuto" Type="FNHMVC.Store.DatoRiesgoBaseSet_DatoRiesgoAuto" Multiplicity="*" />
+    <End Role="AutoVersion" Type="FNHMVC.Store.VersionSet_AutoVersion" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AutoVersion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DatoRiesgoAuto">
+        <PropertyRef Name="AutoVersionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DatoRiesgoMotoMotoMarca">
+    <End Role="DatoRiesgoMoto" Type="FNHMVC.Store.DatoRiesgoBaseSet_DatoRiesgoMoto" Multiplicity="*" />
+    <End Role="MotoMarca" Type="FNHMVC.Store.MarcaSet_MotoMarca" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MotoMarca">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DatoRiesgoMoto">
+        <PropertyRef Name="MotoMarcaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DatoRiesgoMotoMotoModelo">
+    <End Role="DatoRiesgoMoto" Type="FNHMVC.Store.DatoRiesgoBaseSet_DatoRiesgoMoto" Multiplicity="*" />
+    <End Role="MotoModelo" Type="FNHMVC.Store.ModeloSet_MotoModelo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MotoModelo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DatoRiesgoMoto">
+        <PropertyRef Name="MotoModeloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DatoRiesgoMotoMotoVersion">
+    <End Role="DatoRiesgoMoto" Type="FNHMVC.Store.DatoRiesgoBaseSet_DatoRiesgoMoto" Multiplicity="*" />
+    <End Role="MotoVersion" Type="FNHMVC.Store.VersionSet_MotoVersion" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MotoVersion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DatoRiesgoMoto">
+        <PropertyRef Name="MotoVersionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ComentarioEmpresa">
+    <End Role="Comentario" Type="FNHMVC.Store.ComentarioSet" Multiplicity="*" />
+    <End Role="Empresa" Type="FNHMVC.Store.EmpresaSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ComentarioNoticia">
+    <End Role="Comentario" Type="FNHMVC.Store.ComentarioSet" Multiplicity="*" />
+    <End Role="Noticia" Type="FNHMVC.Store.NoticiaSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Noticia">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="NoticiaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ComentarioProducto">
+    <End Role="Comentario" Type="FNHMVC.Store.ComentarioSet" Multiplicity="*" />
+    <End Role="Producto" Type="FNHMVC.Store.ProductoSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comentario">
+        <PropertyRef Name="ProductoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CodigoPostalLocalidadCodigoPostal">
+    <End Role="CodigoPostalLocalidad" Type="FNHMVC.Store.CodigoPostalLocalidadSet" Multiplicity="*" />
+    <End Role="CodigoPostal" Type="FNHMVC.Store.CodigoPostalSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="CodigoPostal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CodigoPostalLocalidad">
+        <PropertyRef Name="CodigoPostalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CodigoPostalLocalidadLocalidad">
+    <End Role="CodigoPostalLocalidad" Type="FNHMVC.Store.CodigoPostalLocalidadSet" Multiplicity="*" />
+    <End Role="Localidad" Type="FNHMVC.Store.LocalidadSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Localidad">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CodigoPostalLocalidad">
+        <PropertyRef Name="LocalidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MensajeUsuario">
+    <End Role="Mensaje" Type="FNHMVC.Store.MensajeSet" Multiplicity="*" />
+    <End Role="Usuario" Type="FNHMVC.Store.PersonaSet_Usuario" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Mensaje">
+        <PropertyRef Name="UsuarioToId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_inherits_Persona">
+    <End Role="Persona" Type="FNHMVC.Store.PersonaSet" Multiplicity="1" />
+    <End Role="Usuario" Type="FNHMVC.Store.PersonaSet_Usuario" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DatoRiesgoAuto_inherits_DatoRiesgoBase">
+    <End Role="DatoRiesgoBase" Type="FNHMVC.Store.DatoRiesgoBaseSet" Multiplicity="1" />
+    <End Role="DatoRiesgoAuto" Type="FNHMVC.Store.DatoRiesgoBaseSet_DatoRiesgoAuto" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DatoRiesgoBase">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DatoRiesgoAuto">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoMarca_inherits_Marca">
+    <End Role="Marca" Type="FNHMVC.Store.MarcaSet" Multiplicity="1" />
+    <End Role="AutoMarca" Type="FNHMVC.Store.MarcaSet_AutoMarca" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AutoMarca">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoModelo_inherits_Modelo">
+    <End Role="Modelo" Type="FNHMVC.Store.ModeloSet" Multiplicity="1" />
+    <End Role="AutoModelo" Type="FNHMVC.Store.ModeloSet_AutoModelo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AutoModelo">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoVersion_inherits_Version">
+    <End Role="Version" Type="FNHMVC.Store.VersionSet" Multiplicity="1" />
+    <End Role="AutoVersion" Type="FNHMVC.Store.VersionSet_AutoVersion" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Version">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AutoVersion">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DatoRiesgoMoto_inherits_DatoRiesgoBase">
+    <End Role="DatoRiesgoBase" Type="FNHMVC.Store.DatoRiesgoBaseSet" Multiplicity="1" />
+    <End Role="DatoRiesgoMoto" Type="FNHMVC.Store.DatoRiesgoBaseSet_DatoRiesgoMoto" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DatoRiesgoBase">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DatoRiesgoMoto">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MotoMarca_inherits_Marca">
+    <End Role="Marca" Type="FNHMVC.Store.MarcaSet" Multiplicity="1" />
+    <End Role="MotoMarca" Type="FNHMVC.Store.MarcaSet_MotoMarca" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MotoMarca">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MotoModelo_inherits_Modelo">
+    <End Role="Modelo" Type="FNHMVC.Store.ModeloSet" Multiplicity="1" />
+    <End Role="MotoModelo" Type="FNHMVC.Store.ModeloSet_MotoModelo" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MotoModelo">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MotoVersion_inherits_Version">
+    <End Role="Version" Type="FNHMVC.Store.VersionSet" Multiplicity="1" />
+    <End Role="MotoVersion" Type="FNHMVC.Store.VersionSet_MotoVersion" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Version">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MotoVersion">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DatoRiesgoSalud_inherits_DatoRiesgoBase">
+    <End Role="DatoRiesgoBase" Type="FNHMVC.Store.DatoRiesgoBaseSet" Multiplicity="1" />
+    <End Role="DatoRiesgoSalud" Type="FNHMVC.Store.DatoRiesgoBaseSet_DatoRiesgoSalud" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DatoRiesgoBase">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DatoRiesgoSalud">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DatoRiesgoHogar_inherits_DatoRiesgoBase">
+    <End Role="DatoRiesgoBase" Type="FNHMVC.Store.DatoRiesgoBaseSet" Multiplicity="1" />
+    <End Role="DatoRiesgoHogar" Type="FNHMVC.Store.DatoRiesgoBaseSet_DatoRiesgoHogar" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="DatoRiesgoBase">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DatoRiesgoHogar">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

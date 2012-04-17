@@ -1,0 +1,47 @@
+﻿@model FNHMVC.Web.ViewModels.ExpenseFormModel 
+@*<script src="@Url.Content("~/Scripts/jquery-ui.js")" type="text/javascript"></script> 
+<script src="@Url.Content("~/Scripts/jquery.ui.datepicker.js")" type="text/javascript"></script> 
+<link href="@Url.Content("~/Content/jquery-ui-1.8.6.custom.css")" rel="stylesheet" type="text/css" />*@
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Transaction)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Transaction)
+            @Html.ValidationMessageFor(model => model.Transaction)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date)
+        </div>
+        <div class="editor-field">      
+           @Html.TextBox("Date", Html.Encode(String.Format("{0:mm/dd/yyyy}", Model.Date.ToShortDateString())), new { @class = "ui-datepicker" }) 
+            @Html.ValidationMessageFor(model => model.Date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Amount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Amount)
+            @Html.ValidationMessageFor(model => model.Amount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CategoryId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CategoryId , Model.Category,"--Select--")
+            @Html.ValidationMessageFor(model => model.CategoryId)
+        </div>
+ <script type="text/javascript">
+     $().ready(function () {
+         $('.ui-datepicker').datepicker({
+             dateFormat: 'mm/dd/yy',
+             buttonImage: '@Url.Content("~/Content/calendar.gif")',
+             buttonImageOnly: true,
+             showOn: "button"
+         });
+     });
+</script>

@@ -1,0 +1,9 @@
+C:\Projects\FNHMVC\FNHMVC.Core\bin\Debug\FNHMVC.Core.dll
+C:\Projects\FNHMVC\FNHMVC.Core\bin\Debug\FNHMVC.Core.pdb
+C:\Projects\FNHMVC\FNHMVC.Core\obj\Debug\FNHMVC.Core.dll
+C:\Projects\FNHMVC\FNHMVC.Core\obj\Debug\FNHMVC.Core.pdb
+C:\Projects\FNHMVCNH\FNHMVC.Core\bin\Debug\FNHMVC.Core.dll
+C:\Projects\FNHMVCNH\FNHMVC.Core\bin\Debug\FNHMVC.Core.pdb
+C:\Projects\FNHMVCNH\FNHMVC.Core\obj\Debug\FNHMVC.Core.dll
+C:\Projects\FNHMVCNH\FNHMVC.Core\obj\Debug\FNHMVC.Core.pdb
+C:\Projects\FNHMVCNH\FNHMVC.Core\obj\Debug\FNHMVC.Core.csprojResolveAssemblyReference.cache
