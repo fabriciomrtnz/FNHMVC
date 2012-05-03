@@ -83,4 +83,3 @@ D:\Projects\FNHMVC\FNHMVC.Azure\obj\Debug\FNHMVC.Web\bin\System.Web.WebPages.dll
 D:\Projects\FNHMVC\FNHMVC.Azure\obj\Debug\FNHMVC.Web\bin\System.Web.WebPages.Razor.dll
 D:\Projects\FNHMVC\FNHMVC.Azure\obj\Debug\FNHMVC.Web\bin\System.Web.WebPages.Razor.xml
 D:\Projects\FNHMVC\FNHMVC.Azure\obj\Debug\FNHMVC.Web\bin\System.Web.WebPages.xml
-C:\Projects\FNHMVC\FNHMVC.Azure\bin\Debug\ServiceConfiguration.cscfg

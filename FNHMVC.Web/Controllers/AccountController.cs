@@ -121,6 +121,48 @@ namespace FNHMVC.Web.Controllers
             return Json(new { errors = GetErrorsFromModelState() });
         }
 
+        // POST: /Account/Register
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult Register(UserFormModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var command = new UserRegisterCommand
+                {
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Email = model.Email,
+                    Password = model.Password,
+                    Activated = true,
+                    RoleId = (Int32)UserRoles.User
+                };
+
+                IEnumerable<ValidationResult> errors = commandBus.Validate(command);
+                ModelState.AddModelErrors(errors);
+                if (ModelState.IsValid)
+                {
+                    var result = commandBus.Submit(command);
+                    if (result.Success)
+                    {
+                        User user = userRepository.Get(u => u.Email == model.Email);
+                        formAuthentication.SetAuthCookie(this.HttpContext, UserAuthenticationTicketBuilder.CreateAuthenticationTicket(user));
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "An unknown error occurred.");
+                    }
+                }
+                // If we got this far, something failed, redisplay form
+                return View(model);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+
         private IEnumerable<string> GetErrorsFromModelState()
         {
             return ModelState.SelectMany(x => x.Value.Errors.Select(error => error.ErrorMessage));
