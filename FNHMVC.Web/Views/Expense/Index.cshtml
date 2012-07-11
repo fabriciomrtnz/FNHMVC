@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 <h2>Expense List</h2>   
-@*<script src="~/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>   
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>   
 <script src="~/Scripts/jquery-ui.js" type="text/javascript"></script> 
 <script src="~/Scripts/jquery.ui.datepicker.js" type="text/javascript"></script> 
-<link href="~/Content/jquery-ui-1.8.6.custom.css" rel="stylesheet" type="text/css" />*@
+<link href="~/Content/jquery-ui-1.8.6.custom.css" rel="stylesheet" type="text/css" />
 
    @using (Ajax.BeginForm(new AjaxOptions{ UpdateTargetId="divExpenseList", HttpMethod="Get"})) {
 	<table>
