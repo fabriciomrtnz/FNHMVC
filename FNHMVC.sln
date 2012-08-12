@@ -35,6 +35,42 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Test", "FNHMVC.Test\FNHMVC.Test.csproj", "{B7B225BE-0BF9-49BF-BB05-26614EA9AF28}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 11
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs24
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = FNHMVC.Azure\\FNHMVC.Azure.ccproj
+		SccProjectName1 = FNHMVC.Azure
+		SccLocalPath1 = FNHMVC.Azure
+		SccProjectUniqueName2 = FNHMVC.CommandProcessor\\FNHMVC.CommandProcessor.csproj
+		SccProjectName2 = FNHMVC.CommandProcessor
+		SccLocalPath2 = FNHMVC.CommandProcessor
+		SccProjectUniqueName3 = FNHMVC.Core\\FNHMVC.Core.csproj
+		SccProjectName3 = FNHMVC.Core
+		SccLocalPath3 = FNHMVC.Core
+		SccProjectUniqueName4 = FNHMVC.Data\\FNHMVC.Data.csproj
+		SccProjectName4 = FNHMVC.Data
+		SccLocalPath4 = FNHMVC.Data
+		SccProjectUniqueName5 = FNHMVC.Domain\\FNHMVC.Domain.csproj
+		SccProjectName5 = FNHMVC.Domain
+		SccLocalPath5 = FNHMVC.Domain
+		SccProjectUniqueName6 = FNHMVC.Model\\FNHMVC.Model.csproj
+		SccProjectName6 = FNHMVC.Model
+		SccLocalPath6 = FNHMVC.Model
+		SccProjectUniqueName7 = FNHMVC.Test\\FNHMVC.Test.csproj
+		SccProjectName7 = FNHMVC.Test
+		SccLocalPath7 = FNHMVC.Test
+		SccProjectUniqueName8 = FNHMVC.Web.API\\FNHMVC.Web.API.csproj
+		SccProjectName8 = FNHMVC.Web.API
+		SccLocalPath8 = FNHMVC.Web.API
+		SccProjectUniqueName9 = FNHMVC.Web.Core\\FNHMVC.Web.Core.csproj
+		SccProjectName9 = FNHMVC.Web.Core
+		SccLocalPath9 = FNHMVC.Web.Core
+		SccProjectUniqueName10 = FNHMVC.Web\\FNHMVC.Web.csproj
+		SccProjectName10 = FNHMVC.Web
+		SccLocalPath10 = FNHMVC.Web
+	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = FNHMVC1.vsmdi
 	EndGlobalSection
