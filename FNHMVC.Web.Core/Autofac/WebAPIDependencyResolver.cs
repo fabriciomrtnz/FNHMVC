@@ -9,7 +9,7 @@ using Autofac.Integration.Mvc;
 
 namespace FNHMVC.Web.Core.Autofac
 {
-    public class WebAPIDependencyResolver : System.Web.Http.Services.IDependencyResolver 
+    public class WebAPIDependencyResolver : System.Web.Mvc.IDependencyResolver
     {
 
         private readonly IContainer container;

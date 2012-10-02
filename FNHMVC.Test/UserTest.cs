@@ -60,7 +60,6 @@ namespace FNHMVC.Test
             using (var lifetime = container.BeginLifetimeScope())
             {
                 DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
-                commandBus.Container = this.container;
 
                 User user = new User()
                 {
@@ -73,12 +72,14 @@ namespace FNHMVC.Test
                 };
 
                 UserRegisterCommand command = new UserRegisterCommand(user, "TEST");
-                IEnumerable<ValidationResult> validations = commandBus.Validate(command);
+                IValidationHandler<UserRegisterCommand> validationHandler = lifetime.Resolve<IValidationHandler<UserRegisterCommand>>();
+                IEnumerable<ValidationResult> validations = commandBus.Validate(command, validationHandler);
                 foreach (var val in validations)
                 {
                     Assert.IsNull(val, "Error: User creation did not validate " + val.Message);
                 }
-                ICommandResult result = commandBus.Submit(command);
+                ICommandHandler<UserRegisterCommand> commnadHandler = lifetime.Resolve<ICommandHandler<UserRegisterCommand>>();
+                ICommandResult result = commandBus.Submit(command, commnadHandler);
                 Assert.IsNotNull(result, "Error: User was not created by CommandBus");
                 Assert.IsTrue(result.Success, "Error: User was not created by CommandBus");
             }
@@ -90,8 +91,6 @@ namespace FNHMVC.Test
             using (var lifetime = container.BeginLifetimeScope())
             {
                 IUserRepository userRepository = lifetime.Resolve<IUserRepository>();
-                DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
-                commandBus.Container = this.container;
 
                 User user = userRepository.Get(c => c.Email == "testuser@gmail.com");
                 Assert.IsNotNull(user, "Error: User was not found");
@@ -105,7 +104,6 @@ namespace FNHMVC.Test
             {
                 IUserRepository userRepository = lifetime.Resolve<IUserRepository>();
                 DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
-                commandBus.Container = this.container;
 
                 User user = userRepository.Get(c => c.Email == "testuser@gmail.com");
                 Assert.IsNotNull(user, "Error: User was not found");
@@ -115,12 +113,14 @@ namespace FNHMVC.Test
                 command.OldPassword = "TEST";
                 command.NewPassword = "TEST2";
 
-                IEnumerable<ValidationResult> validations = commandBus.Validate(command);
+                IValidationHandler<ChangePasswordCommand> validationHandler = lifetime.Resolve<IValidationHandler<ChangePasswordCommand>>();
+                IEnumerable<ValidationResult> validations = commandBus.Validate(command, validationHandler);
                 foreach (var val in validations)
                 {
                     Assert.IsNull(val, "Error: User password change did not validate " + val.Message);
                 }
-                ICommandResult result = commandBus.Submit(command);
+                ICommandHandler<ChangePasswordCommand> commnadHandler = lifetime.Resolve<ICommandHandler<ChangePasswordCommand>>();
+                ICommandResult result = commandBus.Submit(command, commnadHandler);
                 Assert.IsNotNull(result, "Error: User password change did not work");
                 Assert.IsTrue(result.Success, "Error: User password change did not work");
             }

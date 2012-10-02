@@ -62,7 +62,6 @@ namespace FNHMVC.Test
             {
                 DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
                 ICategoryRepository categoryRepository = lifetime.Resolve<ICategoryRepository>();
-                commandBus.Container = this.container;
 
                 Category category = categoryRepository.Get(x => x.Name == "Test Category");
                 Assert.IsNotNull(category, "Error: Category not found");
@@ -73,7 +72,8 @@ namespace FNHMVC.Test
                 command.Category = category;
                 command.Transaction = "Test transaction.";
 
-                ICommandResult result = commandBus.Submit(command);
+                ICommandHandler<CreateOrUpdateExpenseCommand> commnadHandler = lifetime.Resolve<ICommandHandler<CreateOrUpdateExpenseCommand>>();
+                ICommandResult result = commandBus.Submit(command, commnadHandler);
                 Assert.IsNotNull(result, "Error: Tipo Via Was Not Created by CommandBus");
                 Assert.IsTrue(result.Success, "Error: Tipo Via Was Not Created by CommandBus");
             }
@@ -85,8 +85,6 @@ namespace FNHMVC.Test
             using (var lifetime = container.BeginLifetimeScope())
             {
                 IExpenseRepository expenseRepository = lifetime.Resolve<IExpenseRepository>();
-                DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
-                commandBus.Container = this.container;
 
                 Expense expense = expenseRepository.Get(c => c.Amount == 120);
                 Assert.IsNotNull(expense, "Error: Expense was not found");
@@ -100,7 +98,6 @@ namespace FNHMVC.Test
             {
                 IExpenseRepository expenseRepository = lifetime.Resolve<IExpenseRepository>();
                 DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
-                commandBus.Container = this.container;
 
                 Expense expense = expenseRepository.Get(c => c.Amount == 120);
                 Assert.IsNotNull(expense, "Error: Expense was not found");
@@ -111,7 +108,8 @@ namespace FNHMVC.Test
                 command.Category = expense.Category;
                 command.Transaction = expense.TransactionDesc;
 
-                ICommandResult result = commandBus.Submit(command);
+                ICommandHandler<CreateOrUpdateExpenseCommand> commnadHandler = lifetime.Resolve<ICommandHandler<CreateOrUpdateExpenseCommand>>();
+                ICommandResult result = commandBus.Submit(command, commnadHandler);
                 Assert.IsNotNull(result, "Error: Expense was not updated");
                 Assert.IsTrue(result.Success, "Error: Expense was not updated");
             }
@@ -125,13 +123,13 @@ namespace FNHMVC.Test
             {
                 IExpenseRepository expenseRepository = lifetime.Resolve<IExpenseRepository>();
                 DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
-                commandBus.Container = this.container;
 
                 Expense expense = expenseRepository.Get(c => c.Amount == 150);
                 Assert.IsNotNull(expense, "Error: Expense was not found");
 
                 DeleteExpenseCommand command = new DeleteExpenseCommand() { ExpenseId = expense.ExpenseId };
-                ICommandResult result = commandBus.Submit(command);
+                ICommandHandler<DeleteExpenseCommand> commnadHandler = lifetime.Resolve<ICommandHandler<DeleteExpenseCommand>>();
+                ICommandResult result = commandBus.Submit(command, commnadHandler);
                 Assert.IsNotNull(result, "Error: Expense was not deleted");
                 Assert.IsTrue(result.Success, "Error: Expense was not deleted");
             }

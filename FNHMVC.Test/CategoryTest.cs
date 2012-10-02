@@ -62,7 +62,6 @@ namespace FNHMVC.Test
             {
                 ICategoryRepository categoryRepository = lifetime.Resolve<ICategoryRepository>();
                 DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
-                commandBus.Container = this.container;
 
                 Category category = new Category()
                 {
@@ -71,12 +70,14 @@ namespace FNHMVC.Test
                 };
 
                 CreateOrUpdateCategoryCommand command = new CreateOrUpdateCategoryCommand(category);
-                IEnumerable<ValidationResult> validations = commandBus.Validate(command);
+                IValidationHandler<CreateOrUpdateCategoryCommand> validationHandler = lifetime.Resolve<IValidationHandler<CreateOrUpdateCategoryCommand>>();
+                IEnumerable<ValidationResult> validations = commandBus.Validate(command, validationHandler);
                 foreach (var val in validations)
                 {
                     Assert.IsNull(val, "Error: Category creation did not validate " + val.Message);
                 }
-                ICommandResult result = commandBus.Submit(command);
+                ICommandHandler<CreateOrUpdateCategoryCommand> commnadHandler = lifetime.Resolve<ICommandHandler<CreateOrUpdateCategoryCommand>>();
+                ICommandResult result = commandBus.Submit(command, commnadHandler);
                 Assert.IsNotNull(result, "Error: Category was not created by commandBus");
                 Assert.IsTrue(result.Success, "Error: Category was not created by commandBus");
             }
@@ -88,8 +89,6 @@ namespace FNHMVC.Test
             using (var lifetime = container.BeginLifetimeScope())
             {
                 ICategoryRepository categoryRepository = lifetime.Resolve<ICategoryRepository>();
-                DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
-                commandBus.Container = this.container;
 
                 Category category = categoryRepository.Get(c => c.Name == "Test Category");
                 Assert.IsNotNull(category, "Error: Category was now found.");
@@ -103,7 +102,6 @@ namespace FNHMVC.Test
             {
                 ICategoryRepository categoryRepository = lifetime.Resolve<ICategoryRepository>();
                 DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
-                commandBus.Container = this.container;
 
                 Category category = categoryRepository.Get(c => c.Name == "Test Category");
                 Assert.IsNotNull(category, "Error: Category was now found.");
@@ -111,14 +109,15 @@ namespace FNHMVC.Test
                 category.Name = "Updated Test Category";
 
                 CreateOrUpdateCategoryCommand command = new CreateOrUpdateCategoryCommand(category);
-                IEnumerable<ValidationResult> validations = commandBus.Validate(command);
+                IValidationHandler<CreateOrUpdateCategoryCommand> validationHandler = lifetime.Resolve<IValidationHandler<CreateOrUpdateCategoryCommand>>();
+                IEnumerable<ValidationResult> validations = commandBus.Validate(command, validationHandler);
 
                 foreach (var val in validations)
                 {
                     Assert.IsNull(val, "Error: Category creation did not validate " + val.Message);
                 }
-                
-                ICommandResult result = commandBus.Submit(command);
+                ICommandHandler<CreateOrUpdateCategoryCommand> commnadHandler = lifetime.Resolve<ICommandHandler<CreateOrUpdateCategoryCommand>>();
+                ICommandResult result = commandBus.Submit(command, commnadHandler);
                 Assert.IsNotNull(result, "Error: Category was not updated by CommandBus");
                 Assert.IsTrue(result.Success, "Error: Provincia was not updated by CommandBus");
             }
@@ -131,13 +130,13 @@ namespace FNHMVC.Test
             {
                 ICategoryRepository categoryRepository = lifetime.Resolve<ICategoryRepository>();
                 DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
-                commandBus.Container = this.container;
 
                 Category category = categoryRepository.Get(c => c.Name == "Updated Test Category");
                 Assert.IsNotNull(category, "Error: Category was now found.");
 
                 DeleteCategoryCommand command = new DeleteCategoryCommand() { CategoryId = category.CategoryId };
-                ICommandResult result = commandBus.Submit(command);
+                ICommandHandler<DeleteCategoryCommand> commnadHandler = lifetime.Resolve<ICommandHandler<DeleteCategoryCommand>>();
+                ICommandResult result = commandBus.Submit(command, commnadHandler);
                 Assert.IsNotNull(result, "Error: Category was not deleted by CommandBus");
                 Assert.IsTrue(result.Success, "Error: Category was not deleted by CommandBus");
             }

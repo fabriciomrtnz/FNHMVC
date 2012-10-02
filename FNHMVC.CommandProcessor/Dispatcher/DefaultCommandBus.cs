@@ -11,14 +11,10 @@ namespace FNHMVC.CommandProcessor.Dispatcher
 {
     public class DefaultCommandBus : ICommandBus
     {
-        public IContainer Container { get; set; }
-
-        public ICommandResult Submit<TCommand>(TCommand command) where TCommand: ICommand
-        {    
-            ICommandHandler<TCommand> handler = null;
-    
-            if (Container == null) handler = DependencyResolver.Current.GetService<ICommandHandler<TCommand>>();
-            else handler = this.Container.Resolve<ICommandHandler<TCommand>>();
+        public ICommandResult Submit<TCommand>(TCommand command)
+            where TCommand : ICommand
+        {
+            ICommandHandler<TCommand> handler = DependencyResolver.Current.GetService<ICommandHandler<TCommand>>();
 
             if (!((handler != null) && handler is ICommandHandler<TCommand>))
             {
@@ -28,12 +24,10 @@ namespace FNHMVC.CommandProcessor.Dispatcher
             return handler.Execute(command);
         }
 
-        public IEnumerable<ValidationResult> Validate<TCommand>(TCommand command) where TCommand : ICommand
+        public IEnumerable<ValidationResult> Validate<TCommand>(TCommand command)
+            where TCommand : ICommand
         {
-            IValidationHandler<TCommand> handler = null;
-
-            if (Container == null) handler = DependencyResolver.Current.GetService<IValidationHandler<TCommand>>();
-            else handler = this.Container.Resolve<IValidationHandler<TCommand>>();
+            IValidationHandler<TCommand> handler = DependencyResolver.Current.GetService<IValidationHandler<TCommand>>();
 
             if (!((handler != null) && handler is IValidationHandler<TCommand>))
             {
@@ -41,6 +35,30 @@ namespace FNHMVC.CommandProcessor.Dispatcher
             }
 
             return handler.Validate(command);
+        }
+
+        public ICommandResult Submit<TCommand, TCommandHandler>(TCommand command, TCommandHandler commandHandler)
+            where TCommand : ICommand
+            where TCommandHandler : ICommandHandler<TCommand>
+        {
+            if (!((commandHandler != null) && commandHandler is ICommandHandler<TCommand>))
+            {
+                throw new CommandHandlerNotFoundException(typeof(TCommand));
+            }
+
+            return commandHandler.Execute(command);
+        }
+
+        public IEnumerable<ValidationResult> Validate<TCommand, TValidationHandler>(TCommand command, TValidationHandler validationHandler)
+            where TCommand : ICommand
+            where TValidationHandler : IValidationHandler<TCommand>
+        {
+            if (!((validationHandler != null) && validationHandler is IValidationHandler<TCommand>))
+            {
+                throw new ValidationHandlerNotFoundException(typeof(TCommand));
+            }
+
+            return validationHandler.Validate(command);
         }
 
         public void AsyncRun<T>(Action<T> action)

@@ -8,3 +8,13 @@ D:\Projects\FNHMVC\FNHMVC.CommandProcessor\bin\Debug\Autofac.xml
 D:\Projects\FNHMVC\FNHMVC.CommandProcessor\obj\Debug\ResolveAssemblyReference.cache
 D:\Projects\FNHMVC\FNHMVC.CommandProcessor\obj\Debug\FNHMVC.CommandProcessor.dll
 D:\Projects\FNHMVC\FNHMVC.CommandProcessor\obj\Debug\FNHMVC.CommandProcessor.pdb
+C:\Projects\FNHMVC\FNHMVC.CommandProcessor\bin\Debug\FNHMVC.CommandProcessor.dll
+C:\Projects\FNHMVC\FNHMVC.CommandProcessor\bin\Debug\FNHMVC.CommandProcessor.pdb
+C:\Projects\FNHMVC\FNHMVC.CommandProcessor\bin\Debug\Autofac.dll
+C:\Projects\FNHMVC\FNHMVC.CommandProcessor\bin\Debug\Autofac.Integration.Mvc.dll
+C:\Projects\FNHMVC\FNHMVC.CommandProcessor\bin\Debug\FNHMVC.Core.dll
+C:\Projects\FNHMVC\FNHMVC.CommandProcessor\bin\Debug\FNHMVC.Core.pdb
+C:\Projects\FNHMVC\FNHMVC.CommandProcessor\bin\Debug\Autofac.xml
+C:\Projects\FNHMVC\FNHMVC.CommandProcessor\obj\Debug\FNHMVC.CommandProcessor.csprojResolveAssemblyReference.cache
+C:\Projects\FNHMVC\FNHMVC.CommandProcessor\obj\Debug\FNHMVC.CommandProcessor.dll
+C:\Projects\FNHMVC\FNHMVC.CommandProcessor\obj\Debug\FNHMVC.CommandProcessor.pdb
