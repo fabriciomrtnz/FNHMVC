@@ -1,0 +1,110 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web", "FNHMVC.Web\FNHMVC.Web.csproj", "{81299089-5E61-485A-BDE1-0855D9856D8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Test", "FNHMVC.Test\FNHMVC.Test.csproj", "{3090B317-7661-40EC-A19F-AD574ACEAEFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web.API", "FNHMVC.Web.API\FNHMVC.Web.API.csproj", "{9505DF6B-1D60-4C4A-A811-C5515EDB097C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.CommandProcessor", "FNHMVC.CommandProcessor\FNHMVC.CommandProcessor.csproj", "{90B8BD02-A12A-4618-8929-C68E5035F179}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Core", "FNHMVC.Core\FNHMVC.Core.csproj", "{717E9B90-BDE5-4B20-846F-622928581FC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Data", "FNHMVC.Data\FNHMVC.Data.csproj", "{991528EA-9D75-41FD-888E-CC4B7F8C96F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Domain", "FNHMVC.Domain\FNHMVC.Domain.csproj", "{4F173B2D-0D64-47CA-9469-C477645C27E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Model", "FNHMVC.Model\FNHMVC.Model.csproj", "{36384326-E85D-4753-8019-F99D65AF0611}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web.Core", "FNHMVC.Web.Core\FNHMVC.Web.Core.csproj", "{EE9F6851-8D21-49CA-B122-83C61B44EF28}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "FNHMVC.Azure", "FNHMVC.Azure\FNHMVC.Azure.ccproj", "{B0F3C382-20F1-44E8-980C-DAB53AFC7664}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 11
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs24
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = FNHMVC.CommandProcessor\\FNHMVC.CommandProcessor.csproj
+		SccProjectName1 = FNHMVC.CommandProcessor
+		SccLocalPath1 = FNHMVC.CommandProcessor
+		SccProjectUniqueName2 = FNHMVC.Core\\FNHMVC.Core.csproj
+		SccProjectName2 = FNHMVC.Core
+		SccLocalPath2 = FNHMVC.Core
+		SccProjectUniqueName3 = FNHMVC.Data\\FNHMVC.Data.csproj
+		SccProjectName3 = FNHMVC.Data
+		SccLocalPath3 = FNHMVC.Data
+		SccProjectUniqueName4 = FNHMVC.Domain\\FNHMVC.Domain.csproj
+		SccProjectName4 = FNHMVC.Domain
+		SccLocalPath4 = FNHMVC.Domain
+		SccProjectUniqueName5 = FNHMVC.Model\\FNHMVC.Model.csproj
+		SccProjectName5 = FNHMVC.Model
+		SccLocalPath5 = FNHMVC.Model
+		SccProjectUniqueName6 = FNHMVC.Test\\FNHMVC.Test.csproj
+		SccProjectName6 = FNHMVC.Test
+		SccLocalPath6 = FNHMVC.Test
+		SccProjectUniqueName7 = FNHMVC.Web.API\\FNHMVC.Web.API.csproj
+		SccProjectName7 = FNHMVC.Web.API
+		SccLocalPath7 = FNHMVC.Web.API
+		SccProjectUniqueName8 = FNHMVC.Web.Core\\FNHMVC.Web.Core.csproj
+		SccProjectName8 = FNHMVC.Web.Core
+		SccLocalPath8 = FNHMVC.Web.Core
+		SccProjectUniqueName9 = FNHMVC.Web\\FNHMVC.Web.csproj
+		SccProjectName9 = FNHMVC.Web
+		SccLocalPath9 = FNHMVC.Web
+		SccProjectUniqueName10 = FNHMVC.Azure\\FNHMVC.Azure.ccproj
+		SccProjectName10 = FNHMVC.Azure
+		SccLocalPath10 = FNHMVC.Azure
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81299089-5E61-485A-BDE1-0855D9856D8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81299089-5E61-485A-BDE1-0855D9856D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81299089-5E61-485A-BDE1-0855D9856D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81299089-5E61-485A-BDE1-0855D9856D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3090B317-7661-40EC-A19F-AD574ACEAEFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3090B317-7661-40EC-A19F-AD574ACEAEFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3090B317-7661-40EC-A19F-AD574ACEAEFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3090B317-7661-40EC-A19F-AD574ACEAEFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9505DF6B-1D60-4C4A-A811-C5515EDB097C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9505DF6B-1D60-4C4A-A811-C5515EDB097C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9505DF6B-1D60-4C4A-A811-C5515EDB097C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9505DF6B-1D60-4C4A-A811-C5515EDB097C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90B8BD02-A12A-4618-8929-C68E5035F179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90B8BD02-A12A-4618-8929-C68E5035F179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90B8BD02-A12A-4618-8929-C68E5035F179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90B8BD02-A12A-4618-8929-C68E5035F179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{717E9B90-BDE5-4B20-846F-622928581FC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{717E9B90-BDE5-4B20-846F-622928581FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{717E9B90-BDE5-4B20-846F-622928581FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{717E9B90-BDE5-4B20-846F-622928581FC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{991528EA-9D75-41FD-888E-CC4B7F8C96F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{991528EA-9D75-41FD-888E-CC4B7F8C96F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{991528EA-9D75-41FD-888E-CC4B7F8C96F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{991528EA-9D75-41FD-888E-CC4B7F8C96F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F173B2D-0D64-47CA-9469-C477645C27E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F173B2D-0D64-47CA-9469-C477645C27E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F173B2D-0D64-47CA-9469-C477645C27E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F173B2D-0D64-47CA-9469-C477645C27E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36384326-E85D-4753-8019-F99D65AF0611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36384326-E85D-4753-8019-F99D65AF0611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36384326-E85D-4753-8019-F99D65AF0611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36384326-E85D-4753-8019-F99D65AF0611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE9F6851-8D21-49CA-B122-83C61B44EF28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE9F6851-8D21-49CA-B122-83C61B44EF28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE9F6851-8D21-49CA-B122-83C61B44EF28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE9F6851-8D21-49CA-B122-83C61B44EF28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0F3C382-20F1-44E8-980C-DAB53AFC7664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F3C382-20F1-44E8-980C-DAB53AFC7664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F3C382-20F1-44E8-980C-DAB53AFC7664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F3C382-20F1-44E8-980C-DAB53AFC7664}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

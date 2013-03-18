@@ -1,0 +1,39 @@
+﻿@using FNHMVC.Web.Helpers;
+@model IEnumerable<FNHMVC.Model.Expense>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Expense List</h2>   
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>   
+<script src="~/Scripts/jquery-ui.js" type="text/javascript"></script> 
+<script src="~/Scripts/jquery.ui.datepicker.js" type="text/javascript"></script> 
+<link href="~/Content/jquery-ui-1.8.6.custom.css" rel="stylesheet" type="text/css" />
+
+   @using (Ajax.BeginForm(new AjaxOptions{ UpdateTargetId="divExpenseList", HttpMethod="Get"})) {
+	<table>
+		<tr>
+		<td>
+		<div> 
+		  Start Date: @Html.TextBox("StartDate", Html.Encode(String.Format("{0:mm/dd/yyyy}", ViewData["StartDate"].ToString())), new { @class = "ui-datepicker" }) 
+		</div>
+		</td>
+		<td><div>
+		   End Date: @Html.TextBox("EndDate", Html.Encode(String.Format("{0:mm/dd/yyyy}", ViewData["EndDate"].ToString())), new { @class = "ui-datepicker" }) 
+		 </div></td>
+		 <td> <input type="submit" value="Search By TransactionDate" /></td>
+		</tr>
+	</table>		 
+ }
+  <div id="divExpenseList">    
+		@Html.Partial("_ExpenseList", Model)
+	</div>
+    <script type="text/javascript">
+        $().ready(function () {
+            $('.ui-datepicker').datepicker({
+                dateFormat: 'mm/dd/yy',
+                buttonImage: '@Url.Content("~/Content/calendar.gif")',
+                buttonImageOnly: true,
+                showOn: "button"
+            });
+        });
+</script>
