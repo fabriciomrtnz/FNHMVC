@@ -14,10 +14,7 @@ namespace FNHMVC.Web.Core.Autofac
     {
        public static IRegistrationBuilder<object, ScanningActivatorData, DynamicRegistrationStyle> RegisterApiControllers(this ContainerBuilder builder, params Assembly[] controllerAssemblies)
        {
-           return
-               from t in builder.RegisterAssemblyTypes(controllerAssemblies)
-               where typeof(IHttpController).IsAssignableFrom(t) && t.Name.EndsWith("Controller")
-               select t;
+           return from t in builder.RegisterAssemblyTypes(controllerAssemblies) where typeof(IHttpController).IsAssignableFrom(t) && t.Name.EndsWith("Controller") select t;
        }
     }
 }

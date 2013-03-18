@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FNHMVC.Core.Common;
 using System.Collections;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Runtime.Serialization;
+using FNHMVC.Core.Common;
 
 namespace FNHMVC.Model
 {
-    [DataContract(IsReference = true)]
+
     public class User
     {
         public User()

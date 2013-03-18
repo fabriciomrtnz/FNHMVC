@@ -39,7 +39,7 @@ namespace FNHMVC.Test
         {
             var builder = new ContainerBuilder();
 
-            builder.Register(c => FNHMVC.Data.Infrastructure.ConnectionHelper.BuildSessionFactory()).As<ISessionFactory>().SingleInstance();
+            builder.Register(c => FNHMVC.Data.Infrastructure.ConnectionHelper.BuildSessionFactory("FNHMVCContainer")).As<ISessionFactory>().SingleInstance();
             builder.Register(c => c.Resolve<ISessionFactory>().OpenSession()).InstancePerLifetimeScope();
 
             builder.RegisterType<DefaultCommandBus>().SingleInstance();

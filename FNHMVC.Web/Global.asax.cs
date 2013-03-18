@@ -19,33 +19,13 @@ namespace FNHMVC.Web
 
     public class MvcApplication : System.Web.HttpApplication
     {
-        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
-        {
-            filters.Add(new HandleErrorAttribute());
-            filters.Add(new UserFilter());
-        }
 
-        public static void RegisterRoutes(RouteCollection routes)
-        {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-            routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
-        }
         public override void Init()
         {
             this.PostAuthenticateRequest += this.PostAuthenticateRequestHandler;
             base.Init();
         }
+
         private void PostAuthenticateRequestHandler(object sender, EventArgs e)
         {
             HttpCookie authCookie = this.Context.Request.Cookies[FormsAuthentication.FormsCookieName];
@@ -60,18 +40,22 @@ namespace FNHMVC.Web
                 formsAuthentication.SetAuthCookie(this.Context, ticket);
             }
         }
+
         private static bool IsValidAuthCookie(HttpCookie authCookie)
         {
             return authCookie != null && !String.IsNullOrEmpty(authCookie.Value);
         }
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
 
-            RegisterGlobalFilters(GlobalFilters.Filters);
-            RegisterRoutes(RouteTable.Routes);
+            WebApiConfig.Register(GlobalConfiguration.Configuration);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            AuthConfig.RegisterAuth();
 
-            BundleTable.Bundles.RegisterTemplateBundles();
             Bootstrapper.Run();
         }
     }

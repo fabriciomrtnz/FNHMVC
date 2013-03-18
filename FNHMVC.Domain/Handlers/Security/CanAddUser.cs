@@ -8,7 +8,6 @@ using FNHMVC.Data.Infrastructure;
 using FNHMVC.Data.Repositories;
 using FNHMVC.Core.Common;
 using FNHMVC.Model;
-using FNHMVC.Domain.Properties;
 
 namespace FNHMVC.Domain.Handlers
 {
