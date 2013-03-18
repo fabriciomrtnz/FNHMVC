@@ -1,4 +1,3 @@
-
 using System;
 using System.Web.Security;
 using FNHMVC.Web.Core.Models;

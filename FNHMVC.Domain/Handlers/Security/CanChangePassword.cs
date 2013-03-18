@@ -7,7 +7,6 @@ using FNHMVC.Core.Common;
 using FNHMVC.CommandProcessor.Command;
 using FNHMVC.Model;
 using FNHMVC.Domain.Commands;
-using FNHMVC.Domain.Properties;
 
 namespace FNHMVC.Domain.Handlers
 {

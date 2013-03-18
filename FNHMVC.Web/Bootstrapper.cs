@@ -24,9 +24,6 @@ namespace FNHMVC.Web
         private static void SetAutofacContainer()
         {
             var builder = new ContainerBuilder();
-            
-            builder.Register(c => FNHMVC.Data.Infrastructure.ConnectionHelper.BuildSessionFactory()).As<ISessionFactory>().SingleInstance();
-            builder.Register(c => c.Resolve<ISessionFactory>().OpenSession()).InstancePerLifetimeScope();
 
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterType<DefaultCommandBus>().As<ICommandBus>().InstancePerHttpRequest();
@@ -42,7 +39,7 @@ namespace FNHMVC.Web
             builder.RegisterType<DefaultFormsAuthentication>().As<IFormsAuthentication>().InstancePerHttpRequest();
             builder.RegisterFilterProvider();
 
-            builder.Register(c => FNHMVC.Data.Infrastructure.ConnectionHelper.BuildSessionFactory()).As<ISessionFactory>().SingleInstance();
+            builder.Register(c => FNHMVC.Data.Infrastructure.ConnectionHelper.BuildSessionFactory("FNHMVCContainer")).As<ISessionFactory>().SingleInstance();
             builder.Register(c => c.Resolve<ISessionFactory>().OpenSession()).InstancePerLifetimeScope();
             
             IContainer container = builder.Build();                  

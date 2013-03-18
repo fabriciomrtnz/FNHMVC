@@ -30,6 +30,7 @@ namespace FNHMVC.Domain.Handlers
                 categoryRepository.Add(category);
             else
                 categoryRepository.Update(category);
+
             unitOfWork.Commit();
             return new CommandResult(true);
         }

@@ -5,7 +5,6 @@ using FNHMVC.Core.Common;
 using FNHMVC.Data.Repositories;
 using FNHMVC.Data.Infrastructure;
 using FNHMVC.Model;
-using FNHMVC.Domain.Properties;
 
 namespace FNHMVC.Domain.Handlers
 {
@@ -25,6 +24,7 @@ namespace FNHMVC.Domain.Handlers
                 isCategoryExists = categoryRepository.Get(c => c.Name == command.Name);
             else
                 isCategoryExists = categoryRepository.Get(c => c.Name == command.Name && c.CategoryId != command.CategoryId);
+
             if (isCategoryExists != null)
             {
                 yield return new ValidationResult("Name", Resources.CategoryExists);
