@@ -1,2 +1,0 @@
-C:\Projects\FNHMVC\FNHMVC.Azure\bin\Debug\ServiceConfiguration.cscfg
-C:\Projects\FNHMVCNH\FNHMVC.Azure\bin\Debug\ServiceConfiguration.cscfg
