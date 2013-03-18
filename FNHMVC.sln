@@ -1,38 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2010
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0D4F6F3F-C055-437D-93D9-17E3264EA9FB}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web", "FNHMVC.Web\FNHMVC.Web.csproj", "{81299089-5E61-485A-BDE1-0855D9856D8E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8CF7EF40-D702-4786-87E1-7D0AC721EFE9}"
-	ProjectSection(SolutionItems) = preProject
-		FNHMVC1.vsmdi = FNHMVC1.vsmdi
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Test", "FNHMVC.Test\FNHMVC.Test.csproj", "{3090B317-7661-40EC-A19F-AD574ACEAEFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Core", "FNHMVC.Core\FNHMVC.Core.csproj", "{C73D0DF7-D21B-4E15-A8AA-70540236D452}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web.API", "FNHMVC.Web.API\FNHMVC.Web.API.csproj", "{9505DF6B-1D60-4C4A-A811-C5515EDB097C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Model", "FNHMVC.Model\FNHMVC.Model.csproj", "{0CB7B2DB-AECA-421A-AA9F-BFF8B532D535}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.CommandProcessor", "FNHMVC.CommandProcessor\FNHMVC.CommandProcessor.csproj", "{90B8BD02-A12A-4618-8929-C68E5035F179}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Data", "FNHMVC.Data\FNHMVC.Data.csproj", "{6A4C3B88-230D-4C19-945E-4685876AA31D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Core", "FNHMVC.Core\FNHMVC.Core.csproj", "{717E9B90-BDE5-4B20-846F-622928581FC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.CommandProcessor", "FNHMVC.CommandProcessor\FNHMVC.CommandProcessor.csproj", "{955FD94A-BBC1-4469-889A-740FB98338DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Data", "FNHMVC.Data\FNHMVC.Data.csproj", "{991528EA-9D75-41FD-888E-CC4B7F8C96F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Domain", "FNHMVC.Domain\FNHMVC.Domain.csproj", "{5AA95E73-CBDD-460E-96F9-4A3DA709DFE0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Domain", "FNHMVC.Domain\FNHMVC.Domain.csproj", "{4F173B2D-0D64-47CA-9469-C477645C27E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web.Core", "FNHMVC.Web.Core\FNHMVC.Web.Core.csproj", "{DBF57927-89DB-4526-A8E0-5C5AC90096B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Model", "FNHMVC.Model\FNHMVC.Model.csproj", "{36384326-E85D-4753-8019-F99D65AF0611}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web", "FNHMVC.Web\FNHMVC.Web.csproj", "{169AFE38-1CA2-4624-BDC4-78C6653B04BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web.Core", "FNHMVC.Web.Core\FNHMVC.Web.Core.csproj", "{EE9F6851-8D21-49CA-B122-83C61B44EF28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web.API", "FNHMVC.Web.API\FNHMVC.Web.API.csproj", "{9472CCE9-DF18-45B9-8506-A2586D4B299B}"
-EndProject
-Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "FNHMVC.Azure", "FNHMVC.Azure\FNHMVC.Azure.ccproj", "{2D5D27C2-1EA2-407D-A2BA-458FA10293AB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Test", "FNHMVC.Test\FNHMVC.Test.csproj", "{B7B225BE-0BF9-49BF-BB05-26614EA9AF28}"
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "FNHMVC.Azure", "FNHMVC.Azure\FNHMVC.Azure.ccproj", "{B0F3C382-20F1-44E8-980C-DAB53AFC7664}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -40,90 +27,84 @@ Global
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs24
 		SccLocalPath0 = .
-		SccProjectUniqueName1 = FNHMVC.Azure\\FNHMVC.Azure.ccproj
-		SccProjectName1 = FNHMVC.Azure
-		SccLocalPath1 = FNHMVC.Azure
-		SccProjectUniqueName2 = FNHMVC.CommandProcessor\\FNHMVC.CommandProcessor.csproj
-		SccProjectName2 = FNHMVC.CommandProcessor
-		SccLocalPath2 = FNHMVC.CommandProcessor
-		SccProjectUniqueName3 = FNHMVC.Core\\FNHMVC.Core.csproj
-		SccProjectName3 = FNHMVC.Core
-		SccLocalPath3 = FNHMVC.Core
-		SccProjectUniqueName4 = FNHMVC.Data\\FNHMVC.Data.csproj
-		SccProjectName4 = FNHMVC.Data
-		SccLocalPath4 = FNHMVC.Data
-		SccProjectUniqueName5 = FNHMVC.Domain\\FNHMVC.Domain.csproj
-		SccProjectName5 = FNHMVC.Domain
-		SccLocalPath5 = FNHMVC.Domain
-		SccProjectUniqueName6 = FNHMVC.Model\\FNHMVC.Model.csproj
-		SccProjectName6 = FNHMVC.Model
-		SccLocalPath6 = FNHMVC.Model
-		SccProjectUniqueName7 = FNHMVC.Test\\FNHMVC.Test.csproj
-		SccProjectName7 = FNHMVC.Test
-		SccLocalPath7 = FNHMVC.Test
-		SccProjectUniqueName8 = FNHMVC.Web.API\\FNHMVC.Web.API.csproj
-		SccProjectName8 = FNHMVC.Web.API
-		SccLocalPath8 = FNHMVC.Web.API
-		SccProjectUniqueName9 = FNHMVC.Web.Core\\FNHMVC.Web.Core.csproj
-		SccProjectName9 = FNHMVC.Web.Core
-		SccLocalPath9 = FNHMVC.Web.Core
-		SccProjectUniqueName10 = FNHMVC.Web\\FNHMVC.Web.csproj
-		SccProjectName10 = FNHMVC.Web
-		SccLocalPath10 = FNHMVC.Web
-	EndGlobalSection
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = FNHMVC1.vsmdi
+		SccProjectUniqueName1 = FNHMVC.CommandProcessor\\FNHMVC.CommandProcessor.csproj
+		SccProjectName1 = FNHMVC.CommandProcessor
+		SccLocalPath1 = FNHMVC.CommandProcessor
+		SccProjectUniqueName2 = FNHMVC.Core\\FNHMVC.Core.csproj
+		SccProjectName2 = FNHMVC.Core
+		SccLocalPath2 = FNHMVC.Core
+		SccProjectUniqueName3 = FNHMVC.Data\\FNHMVC.Data.csproj
+		SccProjectName3 = FNHMVC.Data
+		SccLocalPath3 = FNHMVC.Data
+		SccProjectUniqueName4 = FNHMVC.Domain\\FNHMVC.Domain.csproj
+		SccProjectName4 = FNHMVC.Domain
+		SccLocalPath4 = FNHMVC.Domain
+		SccProjectUniqueName5 = FNHMVC.Model\\FNHMVC.Model.csproj
+		SccProjectName5 = FNHMVC.Model
+		SccLocalPath5 = FNHMVC.Model
+		SccProjectUniqueName6 = FNHMVC.Test\\FNHMVC.Test.csproj
+		SccProjectName6 = FNHMVC.Test
+		SccLocalPath6 = FNHMVC.Test
+		SccProjectUniqueName7 = FNHMVC.Web.API\\FNHMVC.Web.API.csproj
+		SccProjectName7 = FNHMVC.Web.API
+		SccLocalPath7 = FNHMVC.Web.API
+		SccProjectUniqueName8 = FNHMVC.Web.Core\\FNHMVC.Web.Core.csproj
+		SccProjectName8 = FNHMVC.Web.Core
+		SccLocalPath8 = FNHMVC.Web.Core
+		SccProjectUniqueName9 = FNHMVC.Web\\FNHMVC.Web.csproj
+		SccProjectName9 = FNHMVC.Web
+		SccLocalPath9 = FNHMVC.Web
+		SccProjectUniqueName10 = FNHMVC.Azure\\FNHMVC.Azure.ccproj
+		SccProjectName10 = FNHMVC.Azure
+		SccLocalPath10 = FNHMVC.Azure
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C73D0DF7-D21B-4E15-A8AA-70540236D452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C73D0DF7-D21B-4E15-A8AA-70540236D452}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C73D0DF7-D21B-4E15-A8AA-70540236D452}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C73D0DF7-D21B-4E15-A8AA-70540236D452}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0CB7B2DB-AECA-421A-AA9F-BFF8B532D535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CB7B2DB-AECA-421A-AA9F-BFF8B532D535}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CB7B2DB-AECA-421A-AA9F-BFF8B532D535}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CB7B2DB-AECA-421A-AA9F-BFF8B532D535}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A4C3B88-230D-4C19-945E-4685876AA31D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A4C3B88-230D-4C19-945E-4685876AA31D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A4C3B88-230D-4C19-945E-4685876AA31D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A4C3B88-230D-4C19-945E-4685876AA31D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{955FD94A-BBC1-4469-889A-740FB98338DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{955FD94A-BBC1-4469-889A-740FB98338DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{955FD94A-BBC1-4469-889A-740FB98338DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{955FD94A-BBC1-4469-889A-740FB98338DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5AA95E73-CBDD-460E-96F9-4A3DA709DFE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5AA95E73-CBDD-460E-96F9-4A3DA709DFE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5AA95E73-CBDD-460E-96F9-4A3DA709DFE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5AA95E73-CBDD-460E-96F9-4A3DA709DFE0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBF57927-89DB-4526-A8E0-5C5AC90096B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBF57927-89DB-4526-A8E0-5C5AC90096B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBF57927-89DB-4526-A8E0-5C5AC90096B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBF57927-89DB-4526-A8E0-5C5AC90096B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{169AFE38-1CA2-4624-BDC4-78C6653B04BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{169AFE38-1CA2-4624-BDC4-78C6653B04BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{169AFE38-1CA2-4624-BDC4-78C6653B04BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{169AFE38-1CA2-4624-BDC4-78C6653B04BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9472CCE9-DF18-45B9-8506-A2586D4B299B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9472CCE9-DF18-45B9-8506-A2586D4B299B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9472CCE9-DF18-45B9-8506-A2586D4B299B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9472CCE9-DF18-45B9-8506-A2586D4B299B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D5D27C2-1EA2-407D-A2BA-458FA10293AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D5D27C2-1EA2-407D-A2BA-458FA10293AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D5D27C2-1EA2-407D-A2BA-458FA10293AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D5D27C2-1EA2-407D-A2BA-458FA10293AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7B225BE-0BF9-49BF-BB05-26614EA9AF28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7B225BE-0BF9-49BF-BB05-26614EA9AF28}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7B225BE-0BF9-49BF-BB05-26614EA9AF28}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7B225BE-0BF9-49BF-BB05-26614EA9AF28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81299089-5E61-485A-BDE1-0855D9856D8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81299089-5E61-485A-BDE1-0855D9856D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81299089-5E61-485A-BDE1-0855D9856D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81299089-5E61-485A-BDE1-0855D9856D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3090B317-7661-40EC-A19F-AD574ACEAEFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3090B317-7661-40EC-A19F-AD574ACEAEFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3090B317-7661-40EC-A19F-AD574ACEAEFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3090B317-7661-40EC-A19F-AD574ACEAEFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9505DF6B-1D60-4C4A-A811-C5515EDB097C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9505DF6B-1D60-4C4A-A811-C5515EDB097C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9505DF6B-1D60-4C4A-A811-C5515EDB097C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9505DF6B-1D60-4C4A-A811-C5515EDB097C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90B8BD02-A12A-4618-8929-C68E5035F179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90B8BD02-A12A-4618-8929-C68E5035F179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90B8BD02-A12A-4618-8929-C68E5035F179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90B8BD02-A12A-4618-8929-C68E5035F179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{717E9B90-BDE5-4B20-846F-622928581FC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{717E9B90-BDE5-4B20-846F-622928581FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{717E9B90-BDE5-4B20-846F-622928581FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{717E9B90-BDE5-4B20-846F-622928581FC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{991528EA-9D75-41FD-888E-CC4B7F8C96F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{991528EA-9D75-41FD-888E-CC4B7F8C96F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{991528EA-9D75-41FD-888E-CC4B7F8C96F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{991528EA-9D75-41FD-888E-CC4B7F8C96F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F173B2D-0D64-47CA-9469-C477645C27E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F173B2D-0D64-47CA-9469-C477645C27E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F173B2D-0D64-47CA-9469-C477645C27E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F173B2D-0D64-47CA-9469-C477645C27E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36384326-E85D-4753-8019-F99D65AF0611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36384326-E85D-4753-8019-F99D65AF0611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36384326-E85D-4753-8019-F99D65AF0611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36384326-E85D-4753-8019-F99D65AF0611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE9F6851-8D21-49CA-B122-83C61B44EF28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE9F6851-8D21-49CA-B122-83C61B44EF28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE9F6851-8D21-49CA-B122-83C61B44EF28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE9F6851-8D21-49CA-B122-83C61B44EF28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0F3C382-20F1-44E8-980C-DAB53AFC7664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F3C382-20F1-44E8-980C-DAB53AFC7664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F3C382-20F1-44E8-980C-DAB53AFC7664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F3C382-20F1-44E8-980C-DAB53AFC7664}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
 	EndGlobalSection
 EndGlobal

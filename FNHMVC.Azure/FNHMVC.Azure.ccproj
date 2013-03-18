@@ -4,8 +4,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>1.6</ProductVersion>
-    <ProjectGuid>{2d5d27c2-1ea2-407d-a2ba-458fa10293ab}</ProjectGuid>
+    <ProductVersion>1.8</ProductVersion>
+    <ProjectGuid>b0f3c382-20f1-44e8-980c-dab53afc7664</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FNHMVC.Azure</RootNamespace>
@@ -41,9 +41,17 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FNHMVC.Web.API\FNHMVC.Web.API.csproj">
+      <Name>FNHMVC.Web.API</Name>
+      <Project>{9505df6b-1d60-4c4a-a811-c5515edb097c}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>FNHMVC.Web.API</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
     <ProjectReference Include="..\FNHMVC.Web\FNHMVC.Web.csproj">
       <Name>FNHMVC.Web</Name>
-      <Project>{169afe38-1ca2-4624-bdc4-78c6653b04bd}</Project>
+      <Project>{81299089-5e61-485a-bde1-0855d9856d8e}</Project>
       <Private>True</Private>
       <RoleType>Web</RoleType>
       <RoleName>FNHMVC.Web</RoleName>
@@ -53,7 +61,7 @@
   <!-- Import the target files for this project template -->
   <PropertyGroup>
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
-    <CloudExtensionsDir Condition=" '$(CloudExtensionsDir)' == '' ">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Windows Azure Tools\1.6\</CloudExtensionsDir>
+    <CloudExtensionsDir Condition=" '$(CloudExtensionsDir)' == '' ">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Windows Azure Tools\1.8\</CloudExtensionsDir>
   </PropertyGroup>
   <Import Project="$(CloudExtensionsDir)Microsoft.WindowsAzure.targets" />
 </Project>

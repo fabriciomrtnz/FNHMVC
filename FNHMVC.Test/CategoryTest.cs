@@ -40,7 +40,7 @@ namespace FNHMVC.Test
         {
             var builder = new ContainerBuilder();
 
-            builder.Register(c => FNHMVC.Data.Infrastructure.ConnectionHelper.BuildSessionFactory()).As<ISessionFactory>().SingleInstance();
+            builder.Register(c => FNHMVC.Data.Infrastructure.ConnectionHelper.BuildSessionFactory("FNHMVCContainer")).As<ISessionFactory>().SingleInstance();
             builder.Register(c => c.Resolve<ISessionFactory>().OpenSession()).InstancePerLifetimeScope();
 
             builder.RegisterType<DefaultCommandBus>().SingleInstance();
@@ -98,12 +98,14 @@ namespace FNHMVC.Test
         [TestMethod()]
         public void CategoryUpdateTest()
         {
+            Category category;
+
             using (var lifetime = container.BeginLifetimeScope())
             {
                 ICategoryRepository categoryRepository = lifetime.Resolve<ICategoryRepository>();
                 DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
 
-                Category category = categoryRepository.Get(c => c.Name == "Test Category");
+                category = categoryRepository.Get(c => c.Name == "Test Category");
                 Assert.IsNotNull(category, "Error: Category was now found.");
 
                 category.Name = "Updated Test Category";
@@ -116,6 +118,14 @@ namespace FNHMVC.Test
                 {
                     Assert.IsNull(val, "Error: Category creation did not validate " + val.Message);
                 }
+            }
+
+            using (var lifetime = container.BeginLifetimeScope())
+            {
+                DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
+
+                CreateOrUpdateCategoryCommand command = new CreateOrUpdateCategoryCommand(category);
+
                 ICommandHandler<CreateOrUpdateCategoryCommand> commnadHandler = lifetime.Resolve<ICommandHandler<CreateOrUpdateCategoryCommand>>();
                 ICommandResult result = commandBus.Submit(command, commnadHandler);
                 Assert.IsNotNull(result, "Error: Category was not updated by CommandBus");

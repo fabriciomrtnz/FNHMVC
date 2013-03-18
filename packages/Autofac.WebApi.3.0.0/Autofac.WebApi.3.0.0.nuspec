@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Autofac.WebApi</id>
+    <version>3.0.0</version>
+    <title>Autofac ASP.NET Web API Integration</title>
+    <authors>Autofac Contributors</authors>
+    <owners>Autofac Contributors</owners>
+    <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
+    <projectUrl>http://autofac.org/</projectUrl>
+    <iconUrl>http://code.google.com/p/autofac/logo</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ASP.NET Web API Integration for Autofac</description>
+    <summary>Provides an IControllerFactory implementation and other integration points for the ASP.NET Web API.</summary>
+    <releaseNotes />
+    <copyright />
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="Autofac" version="3.0.0" />
+    </dependencies>
+    <references>
+      <reference file="Autofac.Integration.WebApi.dll" />
+    </references>
+  </metadata>
+</package>

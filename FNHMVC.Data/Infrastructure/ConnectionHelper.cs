@@ -12,15 +12,15 @@ namespace FNHMVC.Data.Infrastructure
 {
     static public class ConnectionHelper
     {
-        public static ISessionFactory BuildSessionFactory()
+        public static ISessionFactory BuildSessionFactory(string ConnString)
         {
-            return GetConfiguration().BuildSessionFactory();
+            return GetConfiguration(ConnString).BuildSessionFactory();
         }
 
-        public static FluentConfiguration GetConfiguration()
+        public static FluentConfiguration GetConfiguration(string ConnString)
         {
             return Fluently.Configure()
-                .Database(MsSqlConfiguration.MsSql2008.ConnectionString(c => c.FromConnectionStringWithKey("FNHMVCContainer")))
+                .Database(MsSqlConfiguration.MsSql2008.ConnectionString(c => c.FromConnectionStringWithKey(ConnString)))
                 .Mappings(m => m.FluentMappings.AddFromAssemblyOf<UserMap>());
         }
     }
