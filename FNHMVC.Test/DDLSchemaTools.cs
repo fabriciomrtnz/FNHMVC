@@ -47,19 +47,19 @@ namespace FNHMVC.Test
         [TestMethod]
         public void CreateSchema()
         {
-            FNHMVC.Data.SchemaTool.SchemaTool.CreatSchema(string.Empty);
+            FNHMVC.Data.SchemaTool.SchemaTool.CreatSchema(string.Empty, "FNHMVCContainer");
         }
 
         [TestMethod]
         public void UpdateSchema()
         {
-            FNHMVC.Data.SchemaTool.SchemaTool.UpdateSchema();
+            FNHMVC.Data.SchemaTool.SchemaTool.UpdateSchema("FNHMVCContainer");
         }
 
         [TestMethod]
         public void ValidateSchema()
         {
-            FNHMVC.Data.SchemaTool.SchemaTool.ValidateSchema();
+            FNHMVC.Data.SchemaTool.SchemaTool.ValidateSchema("FNHMVCContainer");
         }
     }
 }

@@ -7,8 +7,7 @@ using System.Runtime.Serialization;
 
 namespace FNHMVC.Model
 {
-    [DataContract(IsReference = true)]
-    [KnownType(typeof(Expense))]
+
     public class Category
     {
         public virtual int CategoryId { get; set; }

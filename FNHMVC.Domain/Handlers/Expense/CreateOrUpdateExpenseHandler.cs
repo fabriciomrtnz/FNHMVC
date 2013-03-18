@@ -36,6 +36,7 @@ namespace FNHMVC.Domain.Handlers
                 expenseRepository.Add(expense);
             else
                 expenseRepository.Update(expense);
+
             unitOfWork.Commit();
             return new CommandResult(true);
         }
