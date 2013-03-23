@@ -1,7 +1,8 @@
-# FNHMVC
+FNHMVC
+======
 FNHMVC is an architectural foundation for building maintainable web applications with ASP.NET, MVC, NHibernate & Autofac.
 
-## Features:
+### Features:
 * CRUD demo in ASP.NET MVC 4 with NHibernate
 * Generic repository for NHibernate
 * Repository Pattern and Unit of Work-Dependency Injection using Autofac
@@ -13,7 +14,7 @@ FNHMVC is an architectural foundation for building maintainable web applications
 * Unit test samples using Selenium WebDrive (user navigation simulation)
 * Windows Azure Web Role
 
-## Architectural & Design Patterns:
+### Architectural & Design Patterns:
 * Model-View-Controller with ASP.NET MVC
 * Object-relational mapping with NHibernate
 * Dependency Injection with Autofac
@@ -23,9 +24,11 @@ FNHMVC is an architectural foundation for building maintainable web applications
 * Unit of work pattern
 * And much more..
 
+--------------------------------------------------------------------------------------------------
 
-# Version 2.0
-## Technologies:
+## Version 2.0
+
+### Technologies:
 * Windows Azure SDK 1.8 October 12 Release
 * ASP.NET MVC 4 RTM
 * ASP.NET Web API
@@ -34,13 +37,13 @@ FNHMVC is an architectural foundation for building maintainable web applications
 * Autofac 3.0.1
 * Selenium WebDriver 2.24
 
-## Requirements:
+### Requirements:
 * Visual Studio 2012
 * MSSQL Express (Nhibernate can be easily configured to use all the mayor SQL servers)
 
+## Version 1.0
 
-# Version 1.0
-## Technologies:
+### Technologies:
 * Windows Azure SDK 1.6
 * ASP.NET MVC 4 RC
 * ASP.NET Web API
@@ -48,15 +51,16 @@ FNHMVC is an architectural foundation for building maintainable web applications
 * Fluent NHibernate 1.3.0
 * Autofac 2.6.1
 
-## Requirements:
+### Requirements:
 * Visual Studio 2010
 * MSSQL Express (Nhibernate can be easily configured to use all the mayor SQL servers)
 
+--------------------------------------------------------------------------------------------------
 
-# Case Studies:
+### Case Studies:
 * http://www.iseguro.com
 
-# Roadmap
+### Roadmap
 * Common.Logging - Logging solution
 * DotNetOpenAuth - Third party authentication solution.
 * Lucene.NET - NoSQL fast text search solution.
