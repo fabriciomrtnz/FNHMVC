@@ -24,9 +24,10 @@ FNHMVC is an architectural foundation for building maintainable web applications
 * Unit of work pattern
 * And much more..
 
+
 --------------------------------------------------------------------------------------------------
 
-## Version 2.0
+### Version 2.0
 
 ### Technologies:
 * Windows Azure SDK 1.8 October 12 Release
@@ -41,7 +42,7 @@ FNHMVC is an architectural foundation for building maintainable web applications
 * Visual Studio 2012
 * MSSQL Express (Nhibernate can be easily configured to use all the mayor SQL servers)
 
-## Version 1.0
+### Version 1.0
 
 ### Technologies:
 * Windows Azure SDK 1.6
@@ -54,6 +55,7 @@ FNHMVC is an architectural foundation for building maintainable web applications
 ### Requirements:
 * Visual Studio 2010
 * MSSQL Express (Nhibernate can be easily configured to use all the mayor SQL servers)
+
 
 --------------------------------------------------------------------------------------------------
 
