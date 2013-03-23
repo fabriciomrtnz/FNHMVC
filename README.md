@@ -1,6 +1,5 @@
 # FNHMVC
 ======
-
 FNHMVC is an architectural foundation for building maintainable web applications with ASP.NET, MVC, NHibernate & Autofac.
 
 ## Features:
