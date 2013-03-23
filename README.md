@@ -1,5 +1,4 @@
 # FNHMVC
-======
 FNHMVC is an architectural foundation for building maintainable web applications with ASP.NET, MVC, NHibernate & Autofac.
 
 ## Features:
@@ -24,3 +23,41 @@ FNHMVC is an architectural foundation for building maintainable web applications
 * Unit of work pattern
 * And much more..
 
+
+# Version 2.0
+## Technologies:
+* Windows Azure SDK 1.8 October 12 Release
+* ASP.NET MVC 4 RTM
+* ASP.NET Web API
+* NHibernate 3.3
+* Fluent NHibernate 1.4.1
+* Autofac 3.0.1
+* Selenium WebDriver 2.24
+
+## Requirements:
+* Visual Studio 2012
+* MSSQL Express (Nhibernate can be easily configured to use all the mayor SQL servers)
+
+
+# Version 1.0
+## Technologies:
+* Windows Azure SDK 1.6
+* ASP.NET MVC 4 RC
+* ASP.NET Web API
+* NHibernate 3.2
+* Fluent NHibernate 1.3.0
+* Autofac 2.6.1
+
+## Requirements:
+* Visual Studio 2010
+* MSSQL Express (Nhibernate can be easily configured to use all the mayor SQL servers)
+
+
+# Case Studies:
+* http://www.iseguro.com
+
+# Roadmap
+* Common.Logging - Logging solution
+* DotNetOpenAuth - Third party authentication solution.
+* Lucene.NET - NoSQL fast text search solution.
+* ActionMailer.NET - MVC Views style mailing solution.
