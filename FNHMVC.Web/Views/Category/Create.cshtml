@@ -3,20 +3,24 @@
     ViewBag.Title = "Create";
 }
 <h2>Create</h2>
-@using (Html.BeginForm("Save", "Category"))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>Category</legend>     
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("Save", "Category", FormMethod.Post, new { @role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <fieldset>
+                <legend>Category</legend>
 
-        @Html.Partial("_CreateOrEdit", Model)
+                @Html.Partial("_CreateOrEdit", Model)
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
-}
+                <p>
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </p>
+            </fieldset>
+        }
+    </div>
+</div>
 
 <div>
     @Html.ActionLink("Back to List", "Index")

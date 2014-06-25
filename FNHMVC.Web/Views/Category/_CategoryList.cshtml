@@ -3,27 +3,17 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
-    <tr> 
-        <th>Actions</th>
-        <th>Name</th>
-         <th>Description</th>
-        </tr>
-    @foreach (var item in Model) {    
-        <tr>
-            <td>
-                @Html.ActionLink("Edit", "Edit",new { id = item.CategoryId })
-                @Ajax.ActionLink("Delete", "Delete", new { id = item.CategoryId },
-                new AjaxOptions { Confirm = "Delete Category?", HttpMethod = "Post", 
-                    UpdateTargetId = "divCategoryList" })              
-            </td>
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @item.Description
-            </td>
-        </tr>
-    
-    }
-</table>
+
+<div class="row">
+    <div class="col-md-4"><strong>Actions</strong></div>
+    <div class="col-md-4"><strong>Name</strong></div>
+    <div class="col-md-4"><strong>Description</strong></div>
+</div>
+@foreach(var item in Model)
+{
+<div class="row">
+    <div class="col-md-4">@Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }), @Ajax.ActionLink("Delete", "Delete", new { id = item.CategoryId }, new AjaxOptions { Confirm = "Delete Category?", HttpMethod = "Post", UpdateTargetId = "divCategoryList" }) </div>
+    <div class="col-md-4">@item.Name</div>
+    <div class="col-md-4">@item.Description</div>
+</div>
+}

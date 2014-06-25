@@ -1,0 +1,2 @@
+C:\Projects\FNHMVC_2\FNHMVC.Azure\bin\Debug\ServiceConfiguration.cscfg
+C:\Projects\FNHMVC_2\FNHMVC.Azure\bin\Debug\ServiceDefinition.csdef

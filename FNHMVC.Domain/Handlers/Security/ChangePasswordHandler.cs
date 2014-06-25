@@ -6,7 +6,7 @@ using FNHMVC.Data.Repositories;
 using FNHMVC.Data.Infrastructure;
 using FNHMVC.CommandProcessor.Command;
 using FNHMVC.Model;
-using FNHMVC.Domain.Commands;
+using FNHMVC.Model.Commands;
 
 namespace FNHMVC.Domain.Handlers.Security
 {

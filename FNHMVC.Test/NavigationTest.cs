@@ -11,7 +11,6 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE; //Requires IEDriverServer.exe search google code for it
 using OpenQA.Selenium.Chrome; //Same as above
 using OpenQA.Selenium.Safari; //Requires Safari 5 or above
-using OpenQA.Selenium.Android; //Havent tested it. 
 
 namespace FNHMVC.Test
 {

@@ -11,7 +11,7 @@ namespace FNHMVC.Web.ViewModels
             [Required]
             [DataType(DataType.EmailAddress)]
             [Display(Name = "EMail")]
-            public string UserName { get; set; }
+            public string Email { get; set; }
 
             [Required]
             [DataType(DataType.Password)]

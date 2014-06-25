@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,16 +44,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\Category\CreateOrUpdateCategoryCommand.cs" />
+    <Compile Include="Commands\Category\DeleteCategoryCommand.cs" />
+    <Compile Include="Commands\Expense\CreateOrUpdateExpenseCommand.cs" />
+    <Compile Include="Commands\Expense\DeleteExpenseCommand.cs" />
+    <Compile Include="Commands\Security\ChangePasswordCommand.cs" />
+    <Compile Include="Commands\Security\UserRegisterCommand.cs" />
+    <Compile Include="DataTransferObjects\DTOCategory.cs" />
+    <Compile Include="DataTransferObjects\DTOExpense.cs" />
+    <Compile Include="DataTransferObjects\DTOUser.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Expense.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FNHMVC.CommandProcessor\FNHMVC.CommandProcessor.csproj">
+      <Project>{90b8bd02-a12a-4618-8929-c68e5035f179}</Project>
+      <Name>FNHMVC.CommandProcessor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FNHMVC.Core\FNHMVC.Core.csproj">
       <Project>{717e9b90-bde5-4b20-846f-622928581fc9}</Project>
       <Name>FNHMVC.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

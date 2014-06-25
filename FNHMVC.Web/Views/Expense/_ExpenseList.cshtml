@@ -1,44 +1,22 @@
 ﻿@model IEnumerable<FNHMVC.Model.Expense>
 
-<table>
-        <tr>
-            <th>Actions</th>
-            <th>Category</th>
-            <th>
-                Transaction
-            </th>
-            <th>
-                Date
-            </th>
-            <th>
-                Amount
-            </th>
-        </tr>
-
-    @foreach (var item in Model) {
-    
-        <tr>
-            <td>
-                @Html.ActionLink("Edit", "Edit",new { id = item.ExpenseId })
-                @Ajax.ActionLink("Delete", "Delete", new { id = item.ExpenseId }, new AjaxOptions { Confirm = "Delete Expense?", HttpMethod = "Post", UpdateTargetId = "divExpenseList" })
-            </td>
-			 <td>
-                @item.Category.Name
-            </td>
-            <td>
-                @item.TransactionDesc
-            </td>
-            <td>
-                @String.Format("{0:d}", item.Date)
-            </td>
-            <td>
-                @String.Format("{0:F}", item.Amount)
-            </td>
-        </tr>
-    
-    }
-
-    </table>
-	<p>
-        @Html.ActionLink("Create New Expense", "Create") | @Html.ActionLink("Create New Category", "Create","Category")
-    </p>
+<div class="row">
+    <div class="col-md-2">Actions</div>
+    <div class="col-md-2">Category</div>
+    <div class="col-md-2">Transaction</div>
+    <div class="col-md-2">Date</div>
+    <div class="col-md-2">Amount</div>
+</div>
+@foreach (var item in Model)
+{
+<div class="row">
+    <div class="col-md-2">@Html.ActionLink("Edit", "Edit", new { id = item.ExpenseId }), @Ajax.ActionLink("Delete", "Delete", new { id = item.ExpenseId }, new AjaxOptions { Confirm = "Delete Expense?", HttpMethod = "Post", UpdateTargetId = "divExpenseList" })</div>
+    <div class="col-md-2">@item.Category.Name</div>
+    <div class="col-md-2">@item.TransactionDesc</div>
+    <div class="col-md-2">@String.Format("{0:d}", item.Date)</div>
+    <div class="col-md-2">@String.Format("{0:F}", item.Amount)</div>
+</div>
+}
+<p>
+    @Html.ActionLink("Create New Expense", "Create") | @Html.ActionLink("Create New Category", "Create","Category")
+</p>

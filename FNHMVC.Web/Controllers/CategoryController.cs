@@ -2,23 +2,26 @@
 using System.Linq;
 using System.Web.Mvc;
 using FNHMVC.Web.ViewModels;
-using FNHMVC.Domain.Commands;
+using FNHMVC.Model.Commands;
 using FNHMVC.Core.Common;
 using FNHMVC.Web.Core.Extensions;
 using FNHMVC.CommandProcessor.Dispatcher;
 using FNHMVC.Data.Repositories;
 using FNHMVC.Web.Core.ActionFilters;
+using AutoMapper;
 
 namespace FNHMVC.Web.Controllers
 {
     [CompressResponse]
     public class CategoryController : Controller
     {
+        private readonly IMappingEngine mapper;
         private readonly ICommandBus commandBus;
         private readonly ICategoryRepository categoryRepository;
 
-        public CategoryController(ICommandBus commandBus, ICategoryRepository categoryRepository)
+        public CategoryController(ICommandBus commandBus, IMappingEngine mapper, ICategoryRepository categoryRepository)
         {
+            this.mapper = mapper;
             this.commandBus = commandBus;
             this.categoryRepository = categoryRepository;
         }
@@ -54,7 +57,14 @@ namespace FNHMVC.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var command = new CreateOrUpdateCategoryCommand(form.CategoryId, form.Name, form.Description);
+                //TODO: Create Automapper form => command
+                var command = new CreateOrUpdateCategoryCommand() 
+                { 
+                    CategoryId = form.CategoryId, 
+                    Name = form.Name, 
+                    Description = form.Description 
+                };
+
                 IEnumerable<ValidationResult> errors = commandBus.Validate(command);
                 ModelState.AddModelErrors(errors);
                 if (ModelState.IsValid)

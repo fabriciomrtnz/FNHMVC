@@ -4,37 +4,37 @@
 <link href="@Url.Content("~/Content/jquery-ui-1.8.6.custom.css")" rel="stylesheet" type="text/css" />*@
 
 
-        <div class="editor-label">
+<div class="row">
+    <div class="col-md-9">
+        <div class="form-group">
             @Html.LabelFor(model => model.Transaction)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Transaction)
+            @Html.TextBoxFor(model => model.Transaction, new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Transaction)
         </div>
-
-        <div class="editor-label">
+        <div class="form-group">
             @Html.LabelFor(model => model.Date)
-        </div>
-        <div class="editor-field">      
-           @Html.TextBox("Date", Html.Encode(String.Format("{0:mm/dd/yyyy}", Model.Date.ToShortDateString())), new { @class = "ui-datepicker" }) 
+            @Html.TextBox("Date", Html.Encode(String.Format("{0:mm/dd/yyyy}", Model.Date.ToShortDateString())), new { @class = "ui-datepicker form-control" })
             @Html.ValidationMessageFor(model => model.Date)
         </div>
-
-        <div class="editor-label">
+        <div class="form-group">
             @Html.LabelFor(model => model.Amount)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Amount)
+            @Html.TextBoxFor(model => model.Amount, new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Amount)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CategoryId)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Transaction)
+            @Html.TextBoxFor(model => model.Transaction, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Transaction)
         </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.CategoryId , Model.Category,"--Select--")
+        <div class="form-group">
+            @Html.LabelFor(model => model.CategoryId)
+            @Html.DropDownListFor(model => model.CategoryId, Model.Category, "--Select--")
             @Html.ValidationMessageFor(model => model.CategoryId)
         </div>
+    </div>
+</div>
+
+
  <script type="text/javascript">
      $().ready(function () {
          $('.ui-datepicker').datepicker({

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using FNHMVC.CommandProcessor.Command;
-using FNHMVC.Domain.Commands;
+using FNHMVC.Model.Commands;
 using FNHMVC.Core.Common;
 using FNHMVC.Data.Repositories;
 using FNHMVC.Data.Infrastructure;

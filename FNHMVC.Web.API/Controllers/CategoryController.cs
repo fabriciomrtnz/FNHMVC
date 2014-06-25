@@ -1,80 +1,84 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Net.Http;
-//using System.Web.Http;
-//using FNHMVC.Data.Repositories;
-//using FNHMVC.Model;
-//using System.Net;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Web.Http;
+using FNHMVC.Data.Repositories;
+using FNHMVC.Model;
+using System.Net;
+using AutoMapper;
+using FNHMVC.Core.Common;
+using FNHMVC.Model.Commands;
+using FNHMVC.CommandProcessor.Command;
+using FNHMVC.CommandProcessor.Dispatcher;
 
-//namespace FNHMVC.Web.API.Controllers
-//{
-//    public class CategoryController : ApiController
-//    {
-//        private readonly ICategoryRepository categoryRepository;
-//        public CategoryController(ICategoryRepository categoryRepository)
-//        {
+namespace FNHMVC.Web.API.Controllers
+{
+    public class CategoryController : ApiController
+    {
+        private readonly IMappingEngine mapper;
+        private readonly ICommandBus commandBus;
+        private readonly ICategoryRepository categoryRepository;
+        public CategoryController(ICommandBus commandBus, IMappingEngine mapper, ICategoryRepository categoryRepository)
+        {
+            this.mapper = mapper;
+            this.commandBus = commandBus;
+            this.categoryRepository = categoryRepository;
+        }
 
-//            this.categoryRepository = categoryRepository;
-//        }
+        public IEnumerable<DTOCategory> Get()
+        {
+            var categories = categoryRepository.GetAll();
+            if (categories == null) throw new HttpResponseException(HttpStatusCode.NotFound);
+            return mapper.Map<List<DTOCategory>>(categories);
+        }
 
-//        public IEnumerable<Category> Get()
-//        {
-//            //var categories = categoryRepository.GetAll().ToList();
-//            //return categories;
-//            var categories = new List<Category>{
-//                new Category { CategoryId=1, Name="CateName", Description="Description"}
-//            };
-//            return categories;
-//        }
+        // GET /api/categoryservice/5
+        public DTOCategory Get(int id)
+        {
+            var category = categoryRepository.GetById(id);
+            if (category == null) throw new HttpResponseException(HttpStatusCode.NotFound);
+            return mapper.Map<DTOCategory>(category);
+        }
 
-//        // GET /api/categoryservice/5
-//        public Category Get(int id)
-//        {
-//            var category = categoryRepository.GetById(id);
-//            if (category == null)
-//                throw new HttpResponseException(HttpStatusCode.NotFound);
-//            return category;
-//        }
+        // POST api/values
+        public HttpResponseMessage Post([FromBody]Category value)
+        {
+            if (ModelState.IsValid)
+            {
+                //TODO: Create Automapper form => command
+                var command = mapper.Map<CreateOrUpdateCategoryCommand>(value);
 
-//        // POST /api/category
-//        public HttpResponseMessage<Category> Post(Category value)
-//        {
-//            if (ModelState.IsValid)
-//            {
-//                //to do : Insert
+                IEnumerable<ValidationResult> errors = commandBus.Validate(command);
 
-//                //Created!
-//                var response = new HttpResponseMessage<Category>(value, HttpStatusCode.Created);
+                var result = commandBus.Submit(command);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            throw new HttpResponseException(HttpStatusCode.BadRequest);
+        }
 
-//                //Let them know where the new NotATweet is
-//                string uri = Url.Route(null, new { id = value.CategoryId });
-//                response.Headers.Location = new Uri(Request.RequestUri, uri);
+        // PUT api/values/5
+        public HttpResponseMessage Put([FromBody]Category value)
+        {
+            if (ModelState.IsValid)
+            {
+                //TODO: Create Automapper form => command
+                var command = mapper.Map<CreateOrUpdateCategoryCommand>(value);
 
-//                return response;
+                IEnumerable<ValidationResult> errors = commandBus.Validate(command);
 
-//            }
-//            throw new HttpResponseException(HttpStatusCode.BadRequest);
-//        }
+                var result = commandBus.Submit(command);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            throw new HttpResponseException(HttpStatusCode.BadRequest);
+        }
 
-//        // PUT /api/category/5
-//        public HttpResponseMessage Put(int id, Category value)
-//        {
-//            if (ModelState.IsValid)
-//            {
-//               //to do: Update
-//                return new HttpResponseMessage(HttpStatusCode.NoContent);
-//            }
-//            throw new HttpResponseException(HttpStatusCode.BadRequest);
-//        }
-
-//        // DELETE /api/category/5
-//        public void Delete(int id)
-//        {
-//            var category = categoryRepository.GetById(id);
-//            if (category == null)
-//                throw new HttpResponseException(HttpStatusCode.NotFound);
-//            //Delete
-//        }
-//    }
-//}
+        // DELETE /api/category/5
+        public HttpResponseMessage Delete(int id)
+        {
+            var category = categoryRepository.GetById(id);
+            if (category == null) throw new HttpResponseException(HttpStatusCode.NotFound);
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+    }
+}

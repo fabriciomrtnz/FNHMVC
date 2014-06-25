@@ -1,30 +1,28 @@
 ﻿using FNHMVC.Data.Repositories;
 using FNHMVC.Data.Infrastructure;
-using FNHMVC.Domain.Commands;
+using FNHMVC.Model.Commands;
 using FNHMVC.CommandProcessor.Command;
 using FNHMVC.Model;
+using AutoMapper;
 
 namespace FNHMVC.Domain.Handlers
 {
     public class CreateOrUpdateCategoryHandler : ICommandHandler<CreateOrUpdateCategoryCommand>
     {
+        private readonly IMappingEngine mapper;
         private readonly ICategoryRepository categoryRepository;
         private readonly IUnitOfWork unitOfWork;
 
-        public CreateOrUpdateCategoryHandler(ICategoryRepository categoryRepository, IUnitOfWork unitOfWork)
+        public CreateOrUpdateCategoryHandler(IMappingEngine mapper, ICategoryRepository categoryRepository, IUnitOfWork unitOfWork)
         {
+            this.mapper = mapper;
             this.categoryRepository = categoryRepository;
             this.unitOfWork = unitOfWork;
         }
 
         public ICommandResult Execute(CreateOrUpdateCategoryCommand command)
         {
-            var category = new Category
-            {
-                CategoryId = command.CategoryId,
-                Name = command.Name,
-                Description = command.Description
-            };
+            var category = this.mapper.Map<Category>(command);
 
             if (category.CategoryId == 0)
                 categoryRepository.Add(category);

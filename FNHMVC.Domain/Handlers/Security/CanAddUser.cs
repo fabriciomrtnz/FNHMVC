@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FNHMVC.Domain.Commands;
+using FNHMVC.Model.Commands;
 using FNHMVC.CommandProcessor.Command;
 using FNHMVC.Data.Infrastructure;
 using FNHMVC.Data.Repositories;

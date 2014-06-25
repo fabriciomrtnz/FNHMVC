@@ -4,10 +4,16 @@ using FNHMVC.CommandProcessor.Dispatcher;
 using FNHMVC.Data.Repositories;
 using FNHMVC.Web.ViewModels;
 using FNHMVC.Web.Helpers;
-using FNHMVC.Domain.Commands;
+using FNHMVC.Model.Commands;
 using FNHMVC.Web.Core.ActionFilters;
 using FNHMVC.Web.Core.Models;
 using FNHMVC.Model;
+using AutoMapper;
+
+using System.Security.Permissions;
+using System.Threading;
+using Microsoft.IdentityModel.Claims;
+using System.Security;
 
 namespace FNHMVC.Web.Controllers
 {
@@ -15,13 +21,15 @@ namespace FNHMVC.Web.Controllers
     [FNHMVCAuthorize(Roles.User, Roles.Admin)]
     public class ExpenseController : Controller
     {
+        private readonly IMappingEngine mapper;
         private readonly ICommandBus commandBus;
         private readonly ICategoryRepository categoryRepository;
         private readonly IExpenseRepository expenseRepository;
 
-        public ExpenseController(ICommandBus commandBus, ICategoryRepository categoryRepository, IExpenseRepository expenseRepository)
+        public ExpenseController(ICommandBus commandBus, IMappingEngine mapper, ICategoryRepository categoryRepository, IExpenseRepository expenseRepository)
         {
             this.commandBus = commandBus;
+            this.mapper = mapper;
             this.categoryRepository = categoryRepository;
             this.expenseRepository = expenseRepository;
         }
@@ -76,7 +84,7 @@ namespace FNHMVC.Web.Controllers
                     ExpenseId = form.ExpenseId,
                     Category = category,
                     Date = form.Date,
-                    Transaction = form.Transaction,
+                    TransactionDesc = form.Transaction,
                     Amount = form.Amount
                 };
                 var result = commandBus.Submit(command);

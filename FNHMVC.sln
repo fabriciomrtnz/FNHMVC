@@ -1,12 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web", "FNHMVC.Web\FNHMVC.Web.csproj", "{81299089-5E61-485A-BDE1-0855D9856D8E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Test", "FNHMVC.Test\FNHMVC.Test.csproj", "{3090B317-7661-40EC-A19F-AD574ACEAEFD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web.API", "FNHMVC.Web.API\FNHMVC.Web.API.csproj", "{9505DF6B-1D60-4C4A-A811-C5515EDB097C}"
-EndProject
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.CommandProcessor", "FNHMVC.CommandProcessor\FNHMVC.CommandProcessor.csproj", "{90B8BD02-A12A-4618-8929-C68E5035F179}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Core", "FNHMVC.Core\FNHMVC.Core.csproj", "{717E9B90-BDE5-4B20-846F-622928581FC9}"
@@ -19,7 +15,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Model", "FNHMVC.Mode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web.Core", "FNHMVC.Web.Core\FNHMVC.Web.Core.csproj", "{EE9F6851-8D21-49CA-B122-83C61B44EF28}"
 EndProject
-Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "FNHMVC.Azure", "FNHMVC.Azure\FNHMVC.Azure.ccproj", "{B0F3C382-20F1-44E8-980C-DAB53AFC7664}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web", "FNHMVC.Web\FNHMVC.Web.csproj", "{8FAEE83E-8134-4760-A778-70EA245E588B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web.API", "FNHMVC.Web.API\FNHMVC.Web.API.csproj", "{572DD1A4-DFDA-4D19-9348-B3C18A6203A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Test", "FNHMVC.Test\FNHMVC.Test.csproj", "{3D312027-6F3D-480B-BEF7-5F7DF641F0A4}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "FNHMVC.Azure", "FNHMVC.Azure\FNHMVC.Azure.ccproj", "{3C656352-7D75-4E3D-B629-E28E19C52B77}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -42,18 +44,18 @@ Global
 		SccProjectUniqueName5 = FNHMVC.Model\\FNHMVC.Model.csproj
 		SccProjectName5 = FNHMVC.Model
 		SccLocalPath5 = FNHMVC.Model
-		SccProjectUniqueName6 = FNHMVC.Test\\FNHMVC.Test.csproj
-		SccProjectName6 = FNHMVC.Test
-		SccLocalPath6 = FNHMVC.Test
-		SccProjectUniqueName7 = FNHMVC.Web.API\\FNHMVC.Web.API.csproj
-		SccProjectName7 = FNHMVC.Web.API
-		SccLocalPath7 = FNHMVC.Web.API
-		SccProjectUniqueName8 = FNHMVC.Web.Core\\FNHMVC.Web.Core.csproj
-		SccProjectName8 = FNHMVC.Web.Core
-		SccLocalPath8 = FNHMVC.Web.Core
-		SccProjectUniqueName9 = FNHMVC.Web\\FNHMVC.Web.csproj
-		SccProjectName9 = FNHMVC.Web
-		SccLocalPath9 = FNHMVC.Web
+		SccProjectUniqueName6 = FNHMVC.Web.Core\\FNHMVC.Web.Core.csproj
+		SccProjectName6 = FNHMVC.Web.Core
+		SccLocalPath6 = FNHMVC.Web.Core
+		SccProjectUniqueName7 = FNHMVC.Web\\FNHMVC.Web.csproj
+		SccProjectName7 = FNHMVC.Web
+		SccLocalPath7 = FNHMVC.Web
+		SccProjectUniqueName8 = FNHMVC.Web.API\\FNHMVC.Web.API.csproj
+		SccProjectName8 = FNHMVC.Web.API
+		SccLocalPath8 = FNHMVC.Web.API
+		SccProjectUniqueName9 = FNHMVC.Test\\FNHMVC.Test.csproj
+		SccProjectName9 = FNHMVC.Test
+		SccLocalPath9 = FNHMVC.Test
 		SccProjectUniqueName10 = FNHMVC.Azure\\FNHMVC.Azure.ccproj
 		SccProjectName10 = FNHMVC.Azure
 		SccLocalPath10 = FNHMVC.Azure
@@ -63,18 +65,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{81299089-5E61-485A-BDE1-0855D9856D8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81299089-5E61-485A-BDE1-0855D9856D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81299089-5E61-485A-BDE1-0855D9856D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81299089-5E61-485A-BDE1-0855D9856D8E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3090B317-7661-40EC-A19F-AD574ACEAEFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3090B317-7661-40EC-A19F-AD574ACEAEFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3090B317-7661-40EC-A19F-AD574ACEAEFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3090B317-7661-40EC-A19F-AD574ACEAEFD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9505DF6B-1D60-4C4A-A811-C5515EDB097C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9505DF6B-1D60-4C4A-A811-C5515EDB097C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9505DF6B-1D60-4C4A-A811-C5515EDB097C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9505DF6B-1D60-4C4A-A811-C5515EDB097C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{90B8BD02-A12A-4618-8929-C68E5035F179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{90B8BD02-A12A-4618-8929-C68E5035F179}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90B8BD02-A12A-4618-8929-C68E5035F179}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -99,10 +89,22 @@ Global
 		{EE9F6851-8D21-49CA-B122-83C61B44EF28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE9F6851-8D21-49CA-B122-83C61B44EF28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE9F6851-8D21-49CA-B122-83C61B44EF28}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B0F3C382-20F1-44E8-980C-DAB53AFC7664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0F3C382-20F1-44E8-980C-DAB53AFC7664}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0F3C382-20F1-44E8-980C-DAB53AFC7664}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0F3C382-20F1-44E8-980C-DAB53AFC7664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FAEE83E-8134-4760-A778-70EA245E588B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FAEE83E-8134-4760-A778-70EA245E588B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FAEE83E-8134-4760-A778-70EA245E588B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FAEE83E-8134-4760-A778-70EA245E588B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{572DD1A4-DFDA-4D19-9348-B3C18A6203A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{572DD1A4-DFDA-4D19-9348-B3C18A6203A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{572DD1A4-DFDA-4D19-9348-B3C18A6203A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{572DD1A4-DFDA-4D19-9348-B3C18A6203A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D312027-6F3D-480B-BEF7-5F7DF641F0A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D312027-6F3D-480B-BEF7-5F7DF641F0A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D312027-6F3D-480B-BEF7-5F7DF641F0A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D312027-6F3D-480B-BEF7-5F7DF641F0A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C656352-7D75-4E3D-B629-E28E19C52B77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C656352-7D75-4E3D-B629-E28E19C52B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C656352-7D75-4E3D-B629-E28E19C52B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C656352-7D75-4E3D-B629-E28E19C52B77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

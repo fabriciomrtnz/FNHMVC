@@ -4,16 +4,16 @@ using System;
 using System.Collections.Specialized;
 using System.Collections.Generic;
 using Autofac;
-using Autofac.Configuration;
 using FNHMVC.CommandProcessor.Dispatcher;
 using FNHMVC.Data.Repositories;
 using FNHMVC.Data.Infrastructure;
-using FNHMVC.Domain.Commands;
+using FNHMVC.Model.Commands;
 using FNHMVC.Core.Common;
 using FNHMVC.CommandProcessor.Command;
 using System.Reflection;
 using NHibernate;
 using FluentNHibernate.Cfg;
+using AutoMapper;
 
 namespace FNHMVC.Test
 {
@@ -52,7 +52,13 @@ namespace FNHMVC.Test
             builder.RegisterAssemblyTypes(services).AsClosedTypesOf(typeof(ICommandHandler<>)).InstancePerLifetimeScope();
             builder.RegisterAssemblyTypes(services).AsClosedTypesOf(typeof(IValidationHandler<>)).InstancePerLifetimeScope();
 
+            builder.Register(c => new ConfigurationStore(new TypeMapFactory(), AutoMapper.Mappers.MapperRegistry.Mappers)).AsImplementedInterfaces().SingleInstance();
+            builder.Register(c => Mapper.Engine).As<IMappingEngine>().SingleInstance();
+            builder.RegisterType<TypeMapFactory>().As<ITypeMapFactory>().SingleInstance();
+
             container = builder.Build();
+
+            AutoMapperConfiguration.Configure();
         }
 
         [TestMethod()]
@@ -62,6 +68,7 @@ namespace FNHMVC.Test
             {
                 ICategoryRepository categoryRepository = lifetime.Resolve<ICategoryRepository>();
                 DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
+                IMappingEngine mapper = lifetime.Resolve<IMappingEngine>();
 
                 Category category = new Category()
                 {
@@ -69,7 +76,7 @@ namespace FNHMVC.Test
                     Description = "This is a test category"
                 };
 
-                CreateOrUpdateCategoryCommand command = new CreateOrUpdateCategoryCommand(category);
+                CreateOrUpdateCategoryCommand command = mapper.Map<CreateOrUpdateCategoryCommand>(category);
                 IValidationHandler<CreateOrUpdateCategoryCommand> validationHandler = lifetime.Resolve<IValidationHandler<CreateOrUpdateCategoryCommand>>();
                 IEnumerable<ValidationResult> validations = commandBus.Validate(command, validationHandler);
                 foreach (var val in validations)
@@ -104,13 +111,14 @@ namespace FNHMVC.Test
             {
                 ICategoryRepository categoryRepository = lifetime.Resolve<ICategoryRepository>();
                 DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
+                IMappingEngine mapper = lifetime.Resolve<IMappingEngine>();
 
                 category = categoryRepository.Get(c => c.Name == "Test Category");
                 Assert.IsNotNull(category, "Error: Category was now found.");
 
                 category.Name = "Updated Test Category";
 
-                CreateOrUpdateCategoryCommand command = new CreateOrUpdateCategoryCommand(category);
+                CreateOrUpdateCategoryCommand command = mapper.Map<CreateOrUpdateCategoryCommand>(category);
                 IValidationHandler<CreateOrUpdateCategoryCommand> validationHandler = lifetime.Resolve<IValidationHandler<CreateOrUpdateCategoryCommand>>();
                 IEnumerable<ValidationResult> validations = commandBus.Validate(command, validationHandler);
 
@@ -123,8 +131,9 @@ namespace FNHMVC.Test
             using (var lifetime = container.BeginLifetimeScope())
             {
                 DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
+                IMappingEngine mapper = lifetime.Resolve<IMappingEngine>();
 
-                CreateOrUpdateCategoryCommand command = new CreateOrUpdateCategoryCommand(category);
+                CreateOrUpdateCategoryCommand command = mapper.Map<CreateOrUpdateCategoryCommand>(category);
 
                 ICommandHandler<CreateOrUpdateCategoryCommand> commnadHandler = lifetime.Resolve<ICommandHandler<CreateOrUpdateCategoryCommand>>();
                 ICommandResult result = commandBus.Submit(command, commnadHandler);
@@ -140,11 +149,12 @@ namespace FNHMVC.Test
             {
                 ICategoryRepository categoryRepository = lifetime.Resolve<ICategoryRepository>();
                 DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
+                IMappingEngine mapper = lifetime.Resolve<IMappingEngine>();
 
                 Category category = categoryRepository.Get(c => c.Name == "Updated Test Category");
                 Assert.IsNotNull(category, "Error: Category was now found.");
 
-                DeleteCategoryCommand command = new DeleteCategoryCommand() { CategoryId = category.CategoryId };
+                DeleteCategoryCommand command = mapper.Map<DeleteCategoryCommand>(category);
                 ICommandHandler<DeleteCategoryCommand> commnadHandler = lifetime.Resolve<ICommandHandler<DeleteCategoryCommand>>();
                 ICommandResult result = commandBus.Submit(command, commnadHandler);
                 Assert.IsNotNull(result, "Error: Category was not deleted by CommandBus");

@@ -3,7 +3,7 @@ FNHMVC
 FNHMVC is an architectural foundation for building maintainable web applications with ASP.NET, MVC, NHibernate & Autofac.
 
 ### Features:
-* CRUD demo in ASP.NET MVC 4 with NHibernate
+* CRUD demo in ASP.NET MVC with NHibernate
 * Generic repository for NHibernate
 * Repository Pattern and Unit of Work-Dependency Injection using Autofac
 * Mobile specific pages using JQuery Mobile
@@ -19,13 +19,35 @@ FNHMVC is an architectural foundation for building maintainable web applications
 * Object-relational mapping with NHibernate
 * Dependency Injection with Autofac
 * Domain Driven Design
-* Command Query Responsibility Separation with Commands, Command Handlers & Command Dispatcher
+* Command Query Responsibility Separation
 * Repository pattern
 * Unit of work pattern
 * And much more..
 
-
 --------------------------------------------------------------------------------------------------
+
+### Version 2.0.1
+
+### Technologies:
+* Windows Azure SDK 1.8 October 12 Release
+* ASP.NET MVC 5.1.2
+* ASP.NET Web API 5.1.2
+* NHibernate 3.3.3.4001
+* Fluent NHibernate 1.4
+* Autofac 3.5
+* Automapper 3.2.1
+* Selenium WebDriver 2.42
+
+### Requirements:
+* Visual Studio 2013
+* MSSQL Express (NHibernate can be easily configured to use all the mayor SQL servers)
+
+### Notes
+* MVC authentication and authorization system has been migrated from Microsoft Membership to Microsoft Identity.
+* Automapper has been implemented for domain->command, command->domain and domain -> dto objects conversions. dto == Data Transfer Objects.
+* Command objects have been moved to the Model project to allow the use of Automapper.
+* Web API sample project with unit test added. Including the use of DTOs.
+* Nuget packages not included in download zip. Please make sure you configure VS to download them for you
 
 ### Version 2.0
 
@@ -40,7 +62,7 @@ FNHMVC is an architectural foundation for building maintainable web applications
 
 ### Requirements:
 * Visual Studio 2012
-* MSSQL Express (Nhibernate can be easily configured to use all the mayor SQL servers)
+* MSSQL Express (NHibernate can be easily configured to use all the mayor SQL servers)
 
 ### Version 1.0
 
@@ -54,7 +76,7 @@ FNHMVC is an architectural foundation for building maintainable web applications
 
 ### Requirements:
 * Visual Studio 2010
-* MSSQL Express (Nhibernate can be easily configured to use all the mayor SQL servers)
+* MSSQL Express (NHibernate can be easily configured to use all the mayor SQL servers)
 
 
 --------------------------------------------------------------------------------------------------
@@ -64,6 +86,5 @@ FNHMVC is an architectural foundation for building maintainable web applications
 
 ### Roadmap
 * Common.Logging - Logging solution
-* DotNetOpenAuth - Third party authentication solution.
 * Lucene.NET - NoSQL fast text search solution.
 * ActionMailer.NET - MVC Views style mailing solution.

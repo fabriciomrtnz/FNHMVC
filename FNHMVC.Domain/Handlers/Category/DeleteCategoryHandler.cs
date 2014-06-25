@@ -1,5 +1,5 @@
 ﻿using FNHMVC.CommandProcessor.Command;
-using FNHMVC.Domain.Commands;
+using FNHMVC.Model.Commands;
 using FNHMVC.Data.Repositories;
 using FNHMVC.Data.Infrastructure;
 

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
+using System.Security.Claims;
 using FNHMVC.Web.ViewModels;
-using FNHMVC.Domain.Commands;
+using FNHMVC.Model.Commands;
 using FNHMVC.Web.Core.Models;
 using FNHMVC.CommandProcessor.Dispatcher;
 using FNHMVC.Data.Repositories;
@@ -11,6 +13,11 @@ using FNHMVC.Core.Common;
 using FNHMVC.Web.Core.Extensions;
 using FNHMVC.Web.Core.Authentication;
 using FNHMVC.Model;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using Owin;
+using System.Threading.Tasks;
 
 namespace FNHMVC.Web.Controllers
 {
@@ -18,114 +25,66 @@ namespace FNHMVC.Web.Controllers
     {
         private readonly ICommandBus commandBus;
         private readonly IUserRepository userRepository;
-        private readonly IFormsAuthentication formAuthentication;
+        private readonly ApplicationUserManager<FNHMVCUser, int> userManager;
 
-        public AccountController(ICommandBus commandBus, IUserRepository userRepository, IFormsAuthentication formAuthentication)
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
+            }
+        }
+
+        public AccountController(ICommandBus commandBus, IUserRepository userRepository, ApplicationUserManager<FNHMVCUser, int> userManager)
         {
             this.commandBus = commandBus;
             this.userRepository = userRepository;
-            this.formAuthentication = formAuthentication;
+            this.userManager = userManager;
         }
-
-        //
-        // GET: /Account/LogOff
 
         public ActionResult LogOff()
         {
-            formAuthentication.Signout();
+            AuthenticationManager.SignOut();
             return RedirectToAction("Index", "Home");
         }
 
         public ActionResult Register()
         {
-            return ContextDependentView();
-        }
-
-        private bool ValidatePassword(User user, string password)
-        {
-            var encoded = Md5Encrypt.Md5EncryptPassword(password);
-            return user.PasswordHash.Equals(encoded);
+            return View();
         }
 
         [AllowAnonymous]
         public ActionResult Login()
         {
-            return ContextDependentView();
+            return View();
         }
 
         [HttpPost]
-        public JsonResult JsonLogin(LogOnFormModel form, string returnUrl)
+        public async Task<ActionResult> Login(LogOnFormModel form, string returnUrl)
         {
             if (ModelState.IsValid)
             {
-                User user = userRepository.Get(u => u.Email == form.UserName && u.Activated == true);
+                var user = this.userRepository.Get(x => x.Email.ToUpper() == form.Email.ToUpper() && Md5Encrypt.Md5EncryptPassword(form.Password) == x.PasswordHash);
                 if (user != null)
                 {
-                    if (ValidatePassword(user, form.Password))
-                    {
-                        formAuthentication.SetAuthCookie(this.HttpContext, UserAuthenticationTicketBuilder.CreateAuthenticationTicket(user));
-
-                        return Json(new { success = true, redirect = returnUrl });
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "The user name or password provided is incorrect.");
-                    }
+                    FNHMVCUser appUser = new FNHMVCUser(user);
+                    AuthenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
+                    AuthenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = true, RedirectUri = returnUrl }, await appUser.GenerateUserIdentityAsync(userManager));
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
                 }
             }
 
-            // If we got this far, something failed
-            return Json(new { errors = GetErrorsFromModelState() });
+            return View(form);
         }
-        //
-        // POST: /Account/JsonRegister
+
 
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult JsonRegister(UserFormModel form)
-        {
-            if (ModelState.IsValid)
-            {
-                var command = new UserRegisterCommand
-                {
-                    FirstName = form.FirstName,
-                    LastName = form.LastName,
-                    Email = form.Email,
-                    Password = form.Password,
-                    Activated = true,
-                    RoleId = (Int32)UserRoles.User
-                };
-                IEnumerable<ValidationResult> errors = commandBus.Validate(command);
-                ModelState.AddModelErrors(errors);
-                if (ModelState.IsValid)
-                {
-                    var result = commandBus.Submit(command);
-                    if (result.Success)
-                    {
-                        User user = userRepository.Get(u => u.Email == form.Email);
-                        formAuthentication.SetAuthCookie(this.HttpContext,
-                                                          UserAuthenticationTicketBuilder.CreateAuthenticationTicket(
-                                                              user));
-                        return Json(new { success = true });
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "An unknown error occurred.");
-                    }
-                }
-                // If we got this far, something failed
-                return Json(new { errors = GetErrorsFromModelState() });
-            }
-
-            // If we got this far, something failed
-            return Json(new { errors = GetErrorsFromModelState() });
-        }
-
-        // POST: /Account/Register
-
-        [AllowAnonymous]
-        [HttpPost]
-        public ActionResult Register(UserFormModel model)
+        public async Task<ActionResult> Register(UserFormModel model)
         {
             if (ModelState.IsValid)
             {
@@ -146,8 +105,15 @@ namespace FNHMVC.Web.Controllers
                     var result = commandBus.Submit(command);
                     if (result.Success)
                     {
-                        User user = userRepository.Get(u => u.Email == model.Email);
-                        formAuthentication.SetAuthCookie(this.HttpContext, UserAuthenticationTicketBuilder.CreateAuthenticationTicket(user));
+                        var user = this.userRepository.Get(x => x.Email.ToUpper() == command.Email.ToUpper() && Md5Encrypt.Md5EncryptPassword(command.Password) == x.PasswordHash);
+                        FNHMVCUser appUser = new FNHMVCUser()
+                        {
+                            Id = user.UserId,
+                            RoleName = Enum.GetName(typeof(UserRoles), user.RoleId),
+                            UserName = user.DisplayName
+                        };
+                        AuthenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
+                        AuthenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = true }, await appUser.GenerateUserIdentityAsync(userManager));
                         return RedirectToAction("Index", "Home");
                     }
                     else
@@ -155,11 +121,9 @@ namespace FNHMVC.Web.Controllers
                         ModelState.AddModelError("", "An unknown error occurred.");
                     }
                 }
-                // If we got this far, something failed, redisplay form
                 return View(model);
             }
 
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
 
@@ -168,20 +132,6 @@ namespace FNHMVC.Web.Controllers
             return ModelState.SelectMany(x => x.Value.Errors.Select(error => error.ErrorMessage));
         }
 
-        private ActionResult ContextDependentView()
-        {
-            string actionName = ControllerContext.RouteData.GetRequiredString("action");
-            if (Request.QueryString["content"] != null)
-            {
-                ViewBag.FormAction = "Json" + actionName;
-                return PartialView();
-            }
-            else
-            {
-                ViewBag.FormAction = actionName;
-                return View();
-            }
-        }
 
         public ActionResult ChangePassword()
         {
@@ -193,10 +143,10 @@ namespace FNHMVC.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                FNHMVCUser user = HttpContext.User.GetFNHMVCUser();
+                var user = HttpContext.User;
                 var command = new ChangePasswordCommand
                 {
-                    UserId = user.UserId,
+                    UserId = int.Parse(user.Identity.GetUserId()),
                     OldPassword = form.OldPassword,
                     NewPassword = form.NewPassword
                 };
@@ -215,7 +165,7 @@ namespace FNHMVC.Web.Controllers
                     }
                 }
             }
-            // If we got this far, something failed, redisplay form
+             
             return View(form);
         }
 
@@ -223,5 +173,6 @@ namespace FNHMVC.Web.Controllers
         {
             return View();
         }
+
     }
 }

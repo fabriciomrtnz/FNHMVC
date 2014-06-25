@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ServiceDefinition name="FNHMVC.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2012-10.1.8">
+<ServiceDefinition name="FNHMVC.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-01.2.3">
   <WebRole name="FNHMVC.Web" vmsize="Small">
     <Sites>
       <Site name="Web">

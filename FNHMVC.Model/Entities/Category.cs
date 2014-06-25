@@ -7,7 +7,6 @@ using System.Runtime.Serialization;
 
 namespace FNHMVC.Model
 {
-
     public class Category
     {
         public virtual int CategoryId { get; set; }

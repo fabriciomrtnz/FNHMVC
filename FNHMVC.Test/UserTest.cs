@@ -4,16 +4,16 @@ using System;
 using System.Collections.Specialized;
 using System.Collections.Generic;
 using Autofac;
-using Autofac.Configuration;
 using FNHMVC.CommandProcessor.Dispatcher;
 using FNHMVC.Data.Repositories;
 using FNHMVC.Data.Infrastructure;
-using FNHMVC.Domain.Commands;
+using FNHMVC.Model.Commands;
 using FNHMVC.Core.Common;
 using FNHMVC.CommandProcessor.Command;
 using System.Reflection;
 using NHibernate;
 using FluentNHibernate.Cfg;
+using AutoMapper;
 
 namespace FNHMVC.Test
 {
@@ -51,7 +51,13 @@ namespace FNHMVC.Test
             builder.RegisterAssemblyTypes(services).AsClosedTypesOf(typeof(ICommandHandler<>)).InstancePerLifetimeScope();
             builder.RegisterAssemblyTypes(services).AsClosedTypesOf(typeof(IValidationHandler<>)).InstancePerLifetimeScope();
 
+            builder.Register(c => new ConfigurationStore(new TypeMapFactory(), AutoMapper.Mappers.MapperRegistry.Mappers)).AsImplementedInterfaces().SingleInstance();
+            builder.Register(c => Mapper.Engine).As<IMappingEngine>().SingleInstance();
+            builder.RegisterType<TypeMapFactory>().As<ITypeMapFactory>().SingleInstance();
+
             container = builder.Build();
+
+            AutoMapperConfiguration.Configure();
         }
 
         [TestMethod()]
@@ -60,6 +66,7 @@ namespace FNHMVC.Test
             using (var lifetime = container.BeginLifetimeScope())
             {
                 DefaultCommandBus commandBus = lifetime.Resolve<DefaultCommandBus>();
+                IMappingEngine mapper = lifetime.Resolve<IMappingEngine>();
 
                 User user = new User()
                 {
@@ -71,7 +78,9 @@ namespace FNHMVC.Test
                     Activated = true
                 };
 
-                UserRegisterCommand command = new UserRegisterCommand(user, "TEST");
+                UserRegisterCommand command = mapper.Map<UserRegisterCommand>(user);
+                command.Password = "TEST";
+
                 IValidationHandler<UserRegisterCommand> validationHandler = lifetime.Resolve<IValidationHandler<UserRegisterCommand>>();
                 IEnumerable<ValidationResult> validations = commandBus.Validate(command, validationHandler);
                 foreach (var val in validations)
