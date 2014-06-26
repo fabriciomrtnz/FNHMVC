@@ -9623,19 +9623,6 @@
             <param name="source">The source.</param>
             <param name="target">The target.</param>
         </member>
-        <member name="M:System.Data.Services.Client.ODataWriterWrapper.WriteNavigationLinkEnd(Microsoft.Data.OData.ODataNavigationLink,System.Object,System.Object)">
-            <summary>
-            Writes the end Actions.
-            </summary>
-            <param name="navlink">The link.</param>
-            <param name="source">The source.</param>
-            <param name="target">The target.</param>
-        </member>
-        <member name="M:System.Data.Services.Client.ODataWriterWrapper.WriteNavigationLinksEnd">
-            <summary>
-            Writes the navigation link end.
-            </summary>
-        </member>
         <member name="M:System.Data.Services.Client.ODataWriterWrapper.WriteStart(Microsoft.Data.OData.ODataNavigationLink,System.Object,System.Object)">
             <summary>
             Writes the start.
@@ -9643,20 +9630,6 @@
             <param name="navigationLink">The navigation link.</param>
             <param name="source">The source.</param>
             <param name="target">The target.</param>
-        </member>
-        <member name="M:System.Data.Services.Client.ODataWriterWrapper.WriteNavigationLinkStart(Microsoft.Data.OData.ODataNavigationLink,System.Object,System.Object)">
-            <summary>
-            Writes the start for Navigation link.
-            </summary>
-            <param name="navigationLink">The navigation link.</param>
-            <param name="source">The source.</param>
-            <param name="target">The target.</param>
-        </member>
-        <member name="M:System.Data.Services.Client.ODataWriterWrapper.WriteNavigationLinksStart(Microsoft.Data.OData.ODataNavigationLink)">
-            <summary>
-            Writes the start for a collection of navigation links.
-            </summary>
-            <param name="navigationLink">The navigation link.</param>
         </member>
         <member name="M:System.Data.Services.Client.ODataWriterWrapper.WriteEntityReferenceLink(Microsoft.Data.OData.ODataEntityReferenceLink,System.Object,System.Object)">
             <summary>
@@ -13745,11 +13718,6 @@
         <member name="F:System.Data.Services.Client.UriWriter.leafResourceSet">
             <summary>the leaf resourceset for the URI being written</summary>
         </member>
-        <member name="F:System.Data.Services.Client.UriWriter.cachedQueryOptions">
-            <summary>
-            For caching query options to be grouped
-            </summary>
-        </member>
         <member name="M:System.Data.Services.Client.UriWriter.#ctor(System.Data.Services.Client.DataServiceContext)">
             <summary>
             Private constructor for creating UriWriter
@@ -13930,18 +13898,6 @@
             VisitCustomQueryOptions visit method.
             </summary>
             <param name="options">Custom query options</param>
-        </member>
-        <member name="M:System.Data.Services.Client.UriWriter.AddAsCachedQueryOption(System.String,System.String)">
-            <summary>
-            Caches query option to be grouped
-            </summary>
-            <param name="optionKey">The key.</param>
-            <param name="optionValue">The value</param>
-        </member>
-        <member name="M:System.Data.Services.Client.UriWriter.AppendCachedQueryOptionsToUriBuilder">
-            <summary>
-            Append all cached query options to uri.
-            </summary>
         </member>
         <member name="M:System.Data.Services.Client.UriWriter.ExpressionToString(System.Linq.Expressions.Expression,System.Boolean)">
             <summary>Serializes an expression to a string.</summary>

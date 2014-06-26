@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Web.API", "FNHMVC.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNHMVC.Test", "FNHMVC.Test\FNHMVC.Test.csproj", "{3D312027-6F3D-480B-BEF7-5F7DF641F0A4}"
 EndProject
-Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "FNHMVC.Azure", "FNHMVC.Azure\FNHMVC.Azure.ccproj", "{3C656352-7D75-4E3D-B629-E28E19C52B77}"
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "FNHMVC.Azure", "FNHMVC.Azure\FNHMVC.Azure.ccproj", "{5214ACCF-54D8-491C-825A-6C73363CAC71}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -101,10 +101,10 @@ Global
 		{3D312027-6F3D-480B-BEF7-5F7DF641F0A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D312027-6F3D-480B-BEF7-5F7DF641F0A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D312027-6F3D-480B-BEF7-5F7DF641F0A4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C656352-7D75-4E3D-B629-E28E19C52B77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C656352-7D75-4E3D-B629-E28E19C52B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C656352-7D75-4E3D-B629-E28E19C52B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C656352-7D75-4E3D-B629-E28E19C52B77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5214ACCF-54D8-491C-825A-6C73363CAC71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5214ACCF-54D8-491C-825A-6C73363CAC71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5214ACCF-54D8-491C-825A-6C73363CAC71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5214ACCF-54D8-491C-825A-6C73363CAC71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

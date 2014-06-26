@@ -13,6 +13,7 @@ C:\Projects\FNHMVC_2\FNHMVC.Web.Core\bin\Debug\FNHMVC.Domain.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web.Core\bin\Debug\FNHMVC.Model.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web.Core\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web.Core\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Projects\FNHMVC_2\FNHMVC.Web.Core\bin\Debug\Microsoft.IdentityModel.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web.Core\bin\Debug\Microsoft.Owin.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web.Core\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web.Core\bin\Debug\Microsoft.Owin.Security.dll
@@ -61,4 +62,3 @@ C:\Projects\FNHMVC_2\FNHMVC.Web.Core\bin\Debug\Iesi.Collections.xml
 C:\Projects\FNHMVC_2\FNHMVC.Web.Core\obj\Debug\FNHMVC.Web.Core.csprojResolveAssemblyReference.cache
 C:\Projects\FNHMVC_2\FNHMVC.Web.Core\obj\Debug\FNHMVC.Web.Core.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web.Core\obj\Debug\FNHMVC.Web.Core.pdb
-C:\Projects\FNHMVC_2\FNHMVC.Web.Core\bin\Debug\Microsoft.IdentityModel.dll

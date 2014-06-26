@@ -1,4 +1,5 @@
 C:\Projects\FNHMVC_2\FNHMVC.Core\bin\Debug\FNHMVC.Core.dll
 C:\Projects\FNHMVC_2\FNHMVC.Core\bin\Debug\FNHMVC.Core.pdb
+C:\Projects\FNHMVC_2\FNHMVC.Core\obj\Debug\FNHMVC.Core.csprojResolveAssemblyReference.cache
 C:\Projects\FNHMVC_2\FNHMVC.Core\obj\Debug\FNHMVC.Core.dll
 C:\Projects\FNHMVC_2\FNHMVC.Core\obj\Debug\FNHMVC.Core.pdb

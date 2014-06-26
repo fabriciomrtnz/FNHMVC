@@ -19,6 +19,7 @@ C:\Projects\FNHMVC_2\FNHMVC.Web\bin\Microsoft.AspNet.Identity.Owin.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web\bin\Microsoft.Data.Edm.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web\bin\Microsoft.Data.OData.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web\bin\Microsoft.Data.Services.Client.dll
+C:\Projects\FNHMVC_2\FNHMVC.Web\bin\Microsoft.IdentityModel.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web\bin\Microsoft.Owin.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web\bin\Microsoft.Owin.Security.Cookies.dll
@@ -115,4 +116,3 @@ C:\Projects\FNHMVC_2\FNHMVC.Web\bin\zh-Hant\System.Spatial.resources.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web\obj\Debug\FNHMVC.Web.csprojResolveAssemblyReference.cache
 C:\Projects\FNHMVC_2\FNHMVC.Web\obj\Debug\FNHMVC.Web.dll
 C:\Projects\FNHMVC_2\FNHMVC.Web\obj\Debug\FNHMVC.Web.pdb
-C:\Projects\FNHMVC_2\FNHMVC.Web\bin\Microsoft.IdentityModel.dll
